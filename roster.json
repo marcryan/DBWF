@@ -1,0 +1,382 @@
+[
+  {
+    "number": 1,
+    "name": "Liam Bortel",
+    "year": "Senior"
+  },
+  {
+    "number": 2,
+    "name": "Jack Carlo",
+    "year": "Senior"
+  },
+  {
+    "number": 3,
+    "name": "Luke Valenti",
+    "year": "Senior"
+  },
+  {
+    "number": 4,
+    "name": "Bruce Hopkins",
+    "year": "Junior"
+  },
+  {
+    "number": 5,
+    "name": "Michael O'Rourke",
+    "year": "Senior"
+  },
+  {
+    "number": 6,
+    "name": "Luca Singh",
+    "year": "Senior"
+  },
+  {
+    "number": 7,
+    "name": "Elias Alvarez",
+    "year": "Senior"
+  },
+  {
+    "number": 9,
+    "name": "Jimmy Benedict",
+    "year": "Senior"
+  },
+  {
+    "number": 10,
+    "name": "Winn Hapgood",
+    "year": "Junior"
+  },
+  {
+    "number": 11,
+    "name": "Chaston Palen",
+    "year": "Senior"
+  },
+  {
+    "number": 12,
+    "name": "Luciano Terrero",
+    "year": "Senior"
+  },
+  {
+    "number": 13,
+    "name": "Henry Stuart",
+    "year": "Junior"
+  },
+  {
+    "number": 14,
+    "name": "Vini Miranda",
+    "year": "Junior"
+  },
+  {
+    "number": 15,
+    "name": "Gannon Collins",
+    "year": "Senior"
+  },
+  {
+    "number": 16,
+    "name": "Hugh Dunlap",
+    "year": "Senior"
+  },
+  {
+    "number": 17,
+    "name": "Jason Kirby",
+    "year": "Senior"
+  },
+  {
+    "number": 18,
+    "name": "Aiden Ramos",
+    "year": "Senior"
+  },
+  {
+    "number": 19,
+    "name": "Nicholas Rachinsky",
+    "year": "Junior"
+  },
+  {
+    "number": 20,
+    "name": "Charlie Leff",
+    "year": "Junior"
+  },
+  {
+    "number": 21,
+    "name": "Peter Blake",
+    "year": "Junior"
+  },
+  {
+    "number": 22,
+    "name": "Jack Mitchell",
+    "year": "Junior"
+  },
+  {
+    "number": 23,
+    "name": "Henry Emel",
+    "year": "Junior"
+  },
+  {
+    "number": 24,
+    "name": "Rhodes Van Duyne",
+    "year": "Senior"
+  },
+  {
+    "number": 25,
+    "name": "Baker Smith",
+    "year": "Junior"
+  },
+  {
+    "number": 26,
+    "name": "Billy Eising",
+    "year": "Sophomore"
+  },
+  {
+    "number": 27,
+    "name": "Cooper George",
+    "year": "Junior"
+  },
+  {
+    "number": 28,
+    "name": "Connor Palomo",
+    "year": "Junior"
+  },
+  {
+    "number": 29,
+    "name": "Aiden Clifford",
+    "year": "Sophomore"
+  },
+  {
+    "number": 30,
+    "name": "Chase Kelly",
+    "year": "Sophomore"
+  },
+  {
+    "number": 31,
+    "name": "John Altoe",
+    "year": "Sophomore"
+  },
+  {
+    "number": 32,
+    "name": "Kellan Harwick",
+    "year": "Sophomore"
+  },
+  {
+    "number": 33,
+    "name": "Connor Davenport",
+    "year": "Sophomore"
+  },
+  {
+    "number": 34,
+    "name": "Sean Mihopoulos",
+    "year": "Junior"
+  },
+  {
+    "number": 35,
+    "name": "Brody Balderach",
+    "year": "Sophomore"
+  },
+  {
+    "number": 36,
+    "name": "Jack Mullane",
+    "year": "Sophomore"
+  },
+  {
+    "number": 37,
+    "name": "John Davey",
+    "year": "Junior"
+  },
+  {
+    "number": 38,
+    "name": "Tanner Hennemuth",
+    "year": "Junior"
+  },
+  {
+    "number": 39,
+    "name": "Geordie duPont",
+    "year": "Sophomore"
+  },
+  {
+    "number": 40,
+    "name": "Jack Ezbiansky",
+    "year": "Sophomore"
+  },
+  {
+    "number": 41,
+    "name": "Monti Piasecki",
+    "year": "Sophomore"
+  },
+  {
+    "number": 42,
+    "name": "Danny Cavoli",
+    "year": "Junior"
+  },
+  {
+    "number": 43,
+    "name": "Troy Carper",
+    "year": "Sophomore"
+  },
+  {
+    "number": 44,
+    "name": "Logan Ingulli",
+    "year": "Senior"
+  },
+  {
+    "number": 45,
+    "name": "Kirk Zarghami",
+    "year": "Junior"
+  },
+  {
+    "number": 46,
+    "name": "Jude McBride",
+    "year": "Sophomore"
+  },
+  {
+    "number": 48,
+    "name": "Charlie McIntosh",
+    "year": "Sophomore"
+  },
+  {
+    "number": 49,
+    "name": "Teddy Monahan",
+    "year": "Sophomore"
+  },
+  {
+    "number": 50,
+    "name": "Hunter Spalsbury",
+    "year": "Senior"
+  },
+  {
+    "number": 51,
+    "name": "Drew Agarabi",
+    "year": "Sophomore"
+  },
+  {
+    "number": 52,
+    "name": "Will Giesen",
+    "year": "Sophomore"
+  },
+  {
+    "number": 54,
+    "name": "Bowen Schroeder",
+    "year": "Sophomore"
+  },
+  {
+    "number": 55,
+    "name": "Killian Ryan",
+    "year": "Sophomore"
+  },
+  {
+    "number": 56,
+    "name": "Sean Smith",
+    "year": "Junior"
+  },
+  {
+    "number": 58,
+    "name": "Joe Roche",
+    "year": "Junior"
+  },
+  {
+    "number": 60,
+    "name": "Klevis Buqani",
+    "year": "Sophomore"
+  },
+  {
+    "number": 66,
+    "name": "Michael Taylor",
+    "year": "Senior"
+  },
+  {
+    "number": 67,
+    "name": "Jack Benedict",
+    "year": "Sophomore"
+  },
+  {
+    "number": 68,
+    "name": "Max Eills",
+    "year": "Sophomore"
+  },
+  {
+    "number": 74,
+    "name": "Tanner McWilliams",
+    "year": "Sophomore"
+  },
+  {
+    "number": 75,
+    "name": "Thomas Cavolo",
+    "year": "Senior"
+  },
+  {
+    "number": 77,
+    "name": "James Dionisio",
+    "year": "Senior"
+  },
+  {
+    "number": 78,
+    "name": "Will Primmer",
+    "year": "Senior"
+  },
+  {
+    "number": 80,
+    "name": "Brooks Bortel",
+    "year": "Sophomore"
+  },
+  {
+    "number": 81,
+    "name": "Johnny Dunlap",
+    "year": "Sophomore"
+  },
+  {
+    "number": 82,
+    "name": "Callum McBride",
+    "year": "Sophomore"
+  },
+  {
+    "number": 83,
+    "name": "Brett Buys",
+    "year": "Junior"
+  },
+  {
+    "number": 84,
+    "name": "Jameson Murphy",
+    "year": "Sophomore"
+  },
+  {
+    "number": 85,
+    "name": "Ryan Kim",
+    "year": "Sophomore"
+  },
+  {
+    "number": 88,
+    "name": "Ben Cohen",
+    "year": "Sophomore"
+  },
+  {
+    "number": 89,
+    "name": "Patrick Kelly",
+    "year": "Senior"
+  },
+  {
+    "number": 90,
+    "name": "Blake Wilson",
+    "year": "Junior"
+  },
+  {
+    "number": 91,
+    "name": "Bo Benedict",
+    "year": "Junior"
+  },
+  {
+    "number": 95,
+    "name": "Thomas Fogarty",
+    "year": "Junior"
+  },
+  {
+    "number": 97,
+    "name": "Evan Ust",
+    "year": "Senior"
+  },
+  {
+    "number": 98,
+    "name": "William Stramandinoli",
+    "year": "Junior"
+  },
+  {
+    "number": 99,
+    "name": "Jack Turowski",
+    "year": "Sophomore"
+  }
+]
