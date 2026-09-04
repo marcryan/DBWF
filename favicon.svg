@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Blue football">
+  <defs>
+    <path id="ball" d="M-14.2 0
+      C-13.1-5.4 -8.2-8.5 0-8.5
+      C 8.2-8.5 13.1-5.4 14.2 0
+      C 13.1 5.4  8.2 8.5 0 8.5
+      C-8.2 8.5-13.1 5.4-14.2 0Z"/>
+    <clipPath id="ball-clip">
+      <use href="#ball"/>
+    </clipPath>
+  </defs>
+  <rect width="32" height="32" fill="#1B3F66"/>
+  <g transform="translate(16 16) rotate(-34)">
+    <use href="#ball" fill="#4E86C2"/>
+    <g clip-path="url(#ball-clip)">
+      <rect x="-11.1" y="-10" width="2.6" height="20" fill="#F4F7FB"/>
+      <rect x="8.5" y="-10" width="2.6" height="20" fill="#F4F7FB"/>
+    </g>
+    <rect x="-5.1" y="-0.7" width="10.2" height="1.4" rx="0.7" fill="#F4F7FB"/>
+    <rect x="-3.55" y="-2.55" width="1.2" height="5.1" rx="0.5" fill="#F4F7FB"/>
+    <rect x="-1.65" y="-2.55" width="1.2" height="5.1" rx="0.5" fill="#F4F7FB"/>
+    <rect x="0.25" y="-2.55" width="1.2" height="5.1" rx="0.5" fill="#F4F7FB"/>
+    <rect x="2.15" y="-2.55" width="1.2" height="5.1" rx="0.5" fill="#F4F7FB"/>
+  </g>
+</svg>
