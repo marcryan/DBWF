@@ -11,11 +11,17 @@
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta name="theme-color" content="#1B3F66">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Roster">
+  <link rel="manifest" href="data:application/manifest+json,{&quot;name&quot;:&quot;2026 Varsity Roster&quot;,&quot;short_name&quot;:&quot;Roster&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;apple-touch-icon.png&quot;,&quot;sizes&quot;:&quot;180x180&quot;,&quot;type&quot;:&quot;image/png&quot;}]}">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
     :root {
       --font-sans: 'Inter', system-ui, sans-serif;
+      --accent: #1144EB;
     }
     body {
       font-family: var(--font-sans);
@@ -62,22 +68,19 @@
 <body class="bg-slate-100 min-h-screen flex items-start justify-center p-4 pt-6">
   <div class="w-full max-w-md mx-auto">
     <!-- Header -->
-    <div class="text-center mb-6">
-      <div class="inline-flex items-center gap-2 bg-white rounded-2xl px-4 py-2 shadow-sm mb-3">
-        <span class="text-sm font-semibold text-slate-600 tracking-wider">2026 VARSITY ROSTER</span>
-      </div>
-      <div class="flex items-center justify-center gap-3 mb-1">
-        <img src="data:image/png;base64,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" alt="Darien High School Blue Wave" style="height: 56px; width: auto;">
-        <h1 class="text-4xl font-bold text-slate-900 tracking-tighter">Jersey Lookup</h1>
-      </div>
+    <div class="flex items-center gap-3 mb-6">
+        <img src="data:image/png;base64,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" alt="Darien High School Blue Wave" style="height: 37px; width: auto;">
+        <div class="relative flex-1">
+          <button id="roster-title-btn" class="w-full flex items-center gap-1 text-left">
+            <h1 id="page-title" class="text-2xl font-bold text-slate-900 tracking-tighter">Football: Varsity Roster</h1>
+            <span class="text-slate-400 text-sm mt-1 shrink-0" aria-hidden="true">&#9662;</span>
+          </button>
+          <div id="roster-dropdown" class="hidden absolute left-0 top-full mt-2 w-64 bg-white rounded-2xl shadow-xl border border-slate-100 z-50 overflow-hidden"></div>
+        </div>
     </div>
 
     <!-- Input -->
     <div class="bg-white rounded-3xl shadow-xl p-6 mb-4">
-      <div class="flex mb-2 bg-slate-100 rounded-2xl p-1">
-        <button id="mode-number" class="flex-1 py-1 text-base font-semibold rounded-xl bg-white shadow-sm active">Number</button>
-        <button id="mode-name" class="flex-1 py-1 text-base font-semibold rounded-xl text-slate-600 ml-1">Name</button>
-      </div>
       <label for="jersey-input" class="block text-sm font-semibold text-slate-500 mb-2 tracking-widest">JERSEY NUMBER</label>
       <div class="relative">
         <input 
@@ -104,41 +107,186 @@
     </div>
     <!-- Result Area -->
     <div id="result-area" class="hidden">
-      <div id="result-card" 
-           class="result-card bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 p-8 text-center">
+          <div id="result-card" 
+              class="result-card bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col min-h-[220px]">
         
-        <!-- Player Info -->
-        <div>
-          <div id="player-name" class="player-name text-slate-900 tracking-[-1.5px] mb-6"></div>
-          
-          <div class="w-full px-2">
-            <div id="year-container" class="w-full flex items-center justify-center px-6 py-4 rounded-2xl">
-              <div id="year-display" class="class-year font-extrabold tracking-tighter text-center"></div>
+            <!-- Player Info (vertically centered) -->
+            <div class="flex-1 flex flex-col items-center justify-center px-6 pt-3">
+              <div id="player-name" class="player-name text-slate-900 text-center tracking-[-1.5px] mb-6"></div>
+              <div id="year-container" class="w-full flex items-center justify-center px-6 py-4 rounded-2xl">
+                <div id="year-display" class="class-year font-extrabold tracking-tighter text-center"></div>
+              </div>
+            </div>
+
+            <!-- Bottom link -->
+            <div class="pb-1 text-center">
+              <a href="#" id="fix-error-link" class="inline-block text-sm text-slate-400 hover:text-slate-600">Fix an error</a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
     <!-- Not Found -->
     <div id="not-found" class="hidden bg-white rounded-3xl shadow-xl p-8 text-center border border-red-100">
-      <div class="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-        <span class="text-red-500 text-4xl">?</span>
+      <div class="text-3xl font-bold text-red-600 mb-2">Unknown?</div>
+      <div class="text-slate-500 text-lg">Possible Freshman</div>
+      <button id="know-player-btn"
+        class="mt-5 w-full py-3 px-6 bg-slate-200 hover:bg-slate-300 active:bg-slate-400 transition-colors text-slate-800 font-semibold rounded-2xl text-base">
+        Know this player?
+      </button>
+    </div>
+
+    <!-- Player Name Lookup -->
+    <div class="mt-6">
+      <button id="name-lookup-btn"
+        class="w-full py-3 px-6 bg-white border-2 border-slate-200 hover:border-slate-300 active:border-slate-400 transition-colors text-slate-700 font-semibold rounded-2xl text-base shadow-sm">
+        Player Name Lookup
+      </button>
+    </div>
+
+    <!-- Footer links -->
+    <div class="mt-6 mb-2 text-center">
+      <div class="text-xs">
+        <a href="mailto:lanyard@aleburd.com?subject=Feature%20Request" id="feature-link" class="text-[var(--accent)] hover:text-[var(--accent)]">Request a feature</a>
+        <span class="text-slate-300 mx-2">|</span>
+        <a href="#" id="install-link" class="text-[var(--accent)] hover:text-[var(--accent)]">Add to Home Screen</a>
       </div>
-      <div class="text-2xl font-semibold text-slate-900 mb-1">Possible freshman</div>
-      <div class="text-slate-500 text-lg">#<span id="notfound-num"></span> isn't on the varsity roster</div>
-      <div class="mt-3 text-sm text-slate-400">Numbers not listed are likely freshman players</div>
-    </div>
-
-    <!-- Empty state / hint -->
-    <div id="hint" class="mt-6 text-center">
-      <p class="text-slate-400 text-sm">Type a number above • 76 players total</p>
-    </div>
-
-    <div class="mt-8 text-center">
-      <div class="text-[10px] text-slate-400 tracking-widest">DRAFT ROSTER • MOBILE OPTIMIZED</div>
+      <p id="install-hint" class="hidden mt-2 text-slate-400 text-xs italic">Use your browser's menu → "Add to Home Screen" (Share → Add to Home Screen on iPhone).</p>
     </div>
   </div>
+
+  <!-- Report Player Modal -->
+  <div id="player-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+    <div class="fixed inset-0 bg-black/50"></div>
+    <div class="relative mx-auto my-8 w-full max-w-sm bg-white rounded-3xl shadow-2xl p-6">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bold text-slate-900">Roster Change</h2>
+        <button id="modal-close" class="text-3xl leading-none text-slate-400 hover:text-slate-600" aria-label="Close">&times;</button>
+      </div>
+      <div class="text-sm text-slate-500 mb-4">Enter the player's details to update the roster.</div>
+      <div id="modal-error" class="hidden text-sm text-red-600 font-semibold mb-3">Please fill in first name, last name, and grade level.</div>
+
+      <div class="mb-3">
+        <label for="modal-first" class="block text-sm font-semibold text-slate-500 mb-1 tracking-widest">FIRST NAME</label>
+        <input id="modal-first" type="text" autocomplete="off"
+          class="w-full py-2 px-3 bg-slate-50 border-2 border-slate-200 focus:border-slate-900 rounded-xl outline-none transition-colors" placeholder="First name">
+      </div>
+
+      <div class="mb-3">
+        <label for="modal-last" class="block text-sm font-semibold text-slate-500 mb-1 tracking-widest">LAST NAME</label>
+        <input id="modal-last" type="text" autocomplete="off"
+          class="w-full py-2 px-3 bg-slate-50 border-2 border-slate-200 focus:border-slate-900 rounded-xl outline-none transition-colors" placeholder="Last name">
+      </div>
+
+      <div class="mb-4">
+        <label for="modal-grade" class="block text-sm font-semibold text-slate-500 mb-1 tracking-widest">GRADE LEVEL</label>
+        <select id="modal-grade"
+          class="w-full py-2 px-3 bg-white border-2 border-slate-200 focus:border-slate-900 rounded-xl outline-none transition-colors text-slate-700">
+          <option value="" disabled selected>Select grade…</option>
+          <option value="Freshman">Freshman</option>
+          <option value="Sophomore">Sophomore</option>
+          <option value="Junior">Junior</option>
+          <option value="Senior">Senior</option>
+        </select>
+      </div>
+
+      <div class="flex flex-col gap-2 mt-4">
+        <button id="modal-save"
+          class="w-full py-3 px-6 bg-slate-900 hover:bg-slate-800 active:bg-slate-700 transition-colors text-white font-semibold rounded-2xl text-base">
+          Save for Me
+        </button>
+        <button id="modal-request"
+          class="w-full py-3 px-6 bg-slate-900 hover:bg-slate-800 active:bg-slate-700 transition-colors text-white font-semibold rounded-2xl text-base">
+          Request roster update
+        </button>
+        <button id="modal-cancel"
+          class="w-full py-3 px-6 bg-slate-200 hover:bg-slate-300 active:bg-slate-400 transition-colors text-slate-700 font-semibold rounded-2xl text-base">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email Intermediary Modal -->
+  <div id="email-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+    <div class="fixed inset-0 bg-black/50" id="email-backdrop"></div>
+    <div class="relative mx-auto my-8 w-full max-w-sm bg-white rounded-3xl shadow-2xl p-6">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bold text-slate-900">Email</h2>
+        <button id="email-close" class="text-3xl leading-none text-slate-400 hover:text-slate-600" aria-label="Close">&times;</button>
+      </div>
+      <p id="email-message" class="text-sm text-slate-600 leading-snug mb-5"></p>
+
+      <div class="flex flex-col gap-2">
+        <button id="email-copy"
+          class="w-full py-3 px-6 bg-slate-200 hover:bg-slate-300 active:bg-slate-400 transition-colors text-slate-800 font-semibold rounded-2xl text-base">
+          Copy text
+        </button>
+        <button id="email-open"
+          class="w-full py-3 px-6 bg-slate-900 hover:bg-slate-800 active:bg-slate-700 transition-colors text-white font-semibold rounded-2xl text-base">
+          Open in email app
+        </button>
+        <button id="email-cancel"
+          class="w-full py-3 px-6 bg-white border-2 border-slate-200 hover:border-slate-300 active:border-slate-400 transition-colors text-slate-700 font-semibold rounded-2xl text-base">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Roster Change Notification Modal -->
+  <div id="remote-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+    <div class="fixed inset-0 bg-black/50" id="remote-backdrop"></div>
+    <div class="relative mx-auto my-8 w-full max-w-sm bg-white rounded-3xl shadow-2xl p-6">
+      <div class="text-center mb-4">
+        <div class="mx-auto w-16 h-16 bg-[var(--accent)]/10 rounded-full flex items-center justify-center mb-3">
+          <span class="text-[var(--accent)] text-2xl">🔔</span>
+        </div>
+        <h2 class="text-xl font-bold text-slate-900">Detected a Roster Change</h2>
+      </div>
+      <p class="text-sm text-slate-600 leading-snug mb-5 text-center">A change has been made to the roster. Reload to load the latest players, or cancel to keep your current roster.</p>
+
+      <div class="flex flex-col gap-2">
+        <button id="remote-reload"
+          class="w-full py-3 px-6 bg-[var(--accent)] hover:bg-[var(--accent)] active:bg-[var(--accent)] transition-colors text-white font-semibold rounded-2xl text-base">
+          Reload
+        </button>
+        <button id="remote-cancel"
+          class="w-full py-3 px-6 bg-slate-200 hover:bg-slate-300 active:bg-slate-400 transition-colors text-slate-800 font-semibold rounded-2xl text-base">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conflict Resolution Modal -->
+  <div id="conflict-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+    <div class="fixed inset-0 bg-black/50" id="conflict-backdrop"></div>
+    <div class="relative mx-auto my-8 w-full max-w-sm bg-white rounded-3xl shadow-2xl p-6">
+      <div class="text-center mb-5">
+        <div class="mx-auto w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-3">
+          <span class="text-amber-600 text-2xl">⚠️</span>
+        </div>
+        <h2 class="text-xl font-bold text-slate-900 mb-1">Conflicts Detected</h2>
+        <p class="text-sm text-slate-600 leading-snug">There are conflicts between your updates and the official roster. Use the official roster?</p>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <button id="conflict-yes"
+          class="w-full py-3 px-6 bg-[var(--accent)] hover:bg-[var(--accent)] active:bg-[var(--accent)] transition-colors text-white font-semibold rounded-2xl text-base">
+          Yes
+        </button>
+        <button id="conflict-no"
+          class="w-full py-3 px-6 bg-slate-200 hover:bg-slate-300 active:bg-slate-400 transition-colors text-slate-800 font-semibold rounded-2xl text-base">
+          No
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Remote change notification bell -->
+  <button id="remote-bell"
+    class="hidden fixed bottom-6 right-6 w-14 h-14 rounded-full bg-[var(--accent)] text-white text-2xl flex items-center justify-center shadow-xl hover:bg-[var(--accent)] active:bg-[var(--accent)] z-40"
+    aria-label="Roster change available" title="Roster change available">🔔</button>
 
   <script>
     // Tailwind script
@@ -147,38 +295,67 @@
     }
 
     // Roster data (embedded, minified from PDF)
+    // Default presentation settings — overridden by the remote roster.json settings block when fetched
+    const DEFAULT_SETTINGS = { title: 'Football: Varsity Roster', accentColor: '#1144EB' };
     const players = [{"number":1,"name":"Liam Bortel","year":"Senior"},{"number":2,"name":"Jack Carlo","year":"Senior"},{"number":3,"name":"Luke Valenti","year":"Senior"},{"number":4,"name":"Bruce Hopkins","year":"Junior"},{"number":5,"name":"Michael O'Rourke","year":"Senior"},{"number":6,"name":"Luca Singh","year":"Senior"},{"number":7,"name":"Elias Alvarez","year":"Senior"},{"number":9,"name":"Jimmy Benedict","year":"Senior"},{"number":10,"name":"Winn Hapgood","year":"Junior"},{"number":11,"name":"Chaston Palen","year":"Senior"},{"number":12,"name":"Luciano Terrero","year":"Senior"},{"number":13,"name":"Henry Stuart","year":"Junior"},{"number":14,"name":"Vini Miranda","year":"Junior"},{"number":15,"name":"Gannon Collins","year":"Senior"},{"number":16,"name":"Hugh Dunlap","year":"Senior"},{"number":17,"name":"Jason Kirby","year":"Senior"},{"number":18,"name":"Aiden Ramos","year":"Senior"},{"number":19,"name":"Nicholas Rachinsky","year":"Junior"},{"number":20,"name":"Charlie Leff","year":"Junior"},{"number":21,"name":"Peter Blake","year":"Junior"},{"number":22,"name":"Jack Mitchell","year":"Junior"},{"number":23,"name":"Henry Emel","year":"Junior"},{"number":24,"name":"Rhodes Van Duyne","year":"Senior"},{"number":25,"name":"Baker Smith","year":"Junior"},{"number":26,"name":"Billy Eising","year":"Sophomore"},{"number":27,"name":"Cooper George","year":"Junior"},{"number":28,"name":"Connor Palomo","year":"Junior"},{"number":29,"name":"Aiden Clifford","year":"Sophomore"},{"number":30,"name":"Chase Kelly","year":"Sophomore"},{"number":31,"name":"John Altoe","year":"Sophomore"},{"number":32,"name":"Kellan Harwick","year":"Sophomore"},{"number":33,"name":"Connor Davenport","year":"Sophomore"},{"number":34,"name":"Sean Mihopoulos","year":"Junior"},{"number":35,"name":"Brody Balderach","year":"Sophomore"},{"number":36,"name":"Jack Mullane","year":"Sophomore"},{"number":37,"name":"John Davey","year":"Junior"},{"number":38,"name":"Tanner Hennemuth","year":"Junior"},{"number":39,"name":"Geordie duPont","year":"Sophomore"},{"number":40,"name":"Jack Ezbiansky","year":"Sophomore"},{"number":41,"name":"Monti Piasecki","year":"Sophomore"},{"number":42,"name":"Danny Cavoli","year":"Junior"},{"number":43,"name":"Troy Carper","year":"Sophomore"},{"number":44,"name":"Logan Ingulli","year":"Senior"},{"number":45,"name":"Kirk Zarghami","year":"Junior"},{"number":46,"name":"Jude McBride","year":"Sophomore"},{"number":48,"name":"Charlie McIntosh","year":"Sophomore"},{"number":49,"name":"Teddy Monahan","year":"Sophomore"},{"number":50,"name":"Hunter Spalsbury","year":"Senior"},{"number":51,"name":"Drew Agarabi","year":"Sophomore"},{"number":52,"name":"Will Giesen","year":"Sophomore"},{"number":54,"name":"Bowen Schroeder","year":"Sophomore"},{"number":55,"name":"Killian Ryan","year":"Sophomore"},{"number":56,"name":"Sean Smith","year":"Junior"},{"number":58,"name":"Joe Roche","year":"Junior"},{"number":60,"name":"Klevis Buqani","year":"Sophomore"},{"number":66,"name":"Michael Taylor","year":"Senior"},{"number":67,"name":"Jack Benedict","year":"Sophomore"},{"number":68,"name":"Max Eills","year":"Sophomore"},{"number":74,"name":"Tanner McWilliams","year":"Sophomore"},{"number":75,"name":"Thomas Cavolo","year":"Senior"},{"number":77,"name":"James Dionisio","year":"Senior"},{"number":78,"name":"Will Primmer","year":"Senior"},{"number":80,"name":"Brooks Bortel","year":"Sophomore"},{"number":81,"name":"Johnny Dunlap","year":"Sophomore"},{"number":82,"name":"Callum McBride","year":"Sophomore"},{"number":83,"name":"Brett Buys","year":"Junior"},{"number":84,"name":"Jameson Murphy","year":"Sophomore"},{"number":85,"name":"Ryan Kim","year":"Sophomore"},{"number":88,"name":"Ben Cohen","year":"Sophomore"},{"number":89,"name":"Patrick Kelly","year":"Senior"},{"number":90,"name":"Blake Wilson","year":"Junior"},{"number":91,"name":"Bo Benedict","year":"Junior"},{"number":95,"name":"Thomas Fogarty","year":"Junior"},{"number":97,"name":"Evan Ust","year":"Senior"},{"number":98,"name":"William Stramandinoli","year":"Junior"},{"number":99,"name":"Jack Turowski","year":"Sophomore"}];
     
     // Build lookup map for O(1)
     const rosterMap = new Map();
-    players.forEach(p => rosterMap.set(p.number, p));
+    // Start with the embedded (football) roster as the offline fallback
+    let basePlayers = players.slice();
+    basePlayers.forEach(p => rosterMap.set(p.number, p));
+
+    // Available rosters (embedded registry). Each points to a remote JSON file.
+    const ROSTERS = [
+      { id: 'football-boys', name: 'Football Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-football-boys.json', embedded: players },
+      { id: 'soccer-boys', name: 'Soccer (Boys) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-soccer-boys.json' },
+      { id: 'soccer-girls', name: 'Soccer (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-soccer-girls.json' },
+      { id: 'field-hockey', name: 'Field Hockey (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-field-hockey.json' },
+      { id: 'volleyball-girls', name: 'Volleyball (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-volleyball-girls.json' }
+    ];
+    let currentRosterId = 'football-boys';
+    try {
+      const saved = localStorage.getItem('RosterSelectedId');
+      if (saved && ROSTERS.some(r => r.id === saved)) currentRosterId = saved;
+    } catch (e) {}
+    let currentRoster = ROSTERS.find(r => r.id === currentRosterId) || ROSTERS[0];
+    const rosterTitleBtn = document.getElementById('roster-title-btn');
+    const rosterDropdown = document.getElementById('roster-dropdown');
+
+    // Load any players reported/saved on this device (persisted across reloads)
+    let reportedPlayers = [];
+    try {
+      const saved = JSON.parse(localStorage.getItem('RosterLookupReported') || '[]');
+      if (Array.isArray(saved)) reportedPlayers = saved;
+    } catch (e) { reportedPlayers = []; }
+    reportedPlayers.forEach(p => rosterMap.set(p.number, p));
+
+    // Combined list used by name search (base roster + device-saved players)
+    let allPlayers = basePlayers.concat(reportedPlayers);
 
     const input = document.getElementById('jersey-input');
     const resultArea = document.getElementById('result-area');
     const resultCard = document.getElementById('result-card');
     const notFound = document.getElementById('not-found');
-    const hint = document.getElementById('hint');
     const nameDisplay = document.getElementById('player-name');
     const yearDisplay = document.getElementById('year-display');
     const yearContainer = document.getElementById('year-container');
-    const notfoundNum = document.getElementById('notfound-num');
 
-    const modeNumberBtn = document.getElementById('mode-number');
-    const modeNameBtn = document.getElementById('mode-name');
+    const nameLookupBtn = document.getElementById('name-lookup-btn');
     const nameResults = document.getElementById('name-results');
     let currentMode = 'number';
 
     let debounceTimer = null;
+    let lastUnknownNumber = null;
+    let currentPlayer = null;
 
     function clearResults() {
       resultArea.classList.add('hidden');
       notFound.classList.add('hidden');
-      hint.classList.remove('hidden');
       yearContainer.className = 'w-full flex items-center justify-center px-6 py-4 rounded-2xl';
     }
 
     function showPlayer(player) {
-      hint.classList.add('hidden');
       notFound.classList.add('hidden');
       resultArea.classList.remove('hidden');
 
@@ -199,17 +376,20 @@
       } else if (player.year === 'Sophomore') {
         containerClasses += 'bg-amber-100';
         textColor = 'text-amber-700';
+      } else if (player.year === 'Freshman') {
+        containerClasses += 'bg-pink-100';
+        textColor = 'text-pink-700';
       }
       
       yearContainer.className = containerClasses;
       yearDisplay.className = `class-year font-extrabold tracking-tighter ${textColor}`;
+      lastUnknownNumber = player.number;
     }
 
     function showNotFound(num) {
-      hint.classList.add('hidden');
       resultArea.classList.add('hidden');
       notFound.classList.remove('hidden');
-      notfoundNum.textContent = num;
+      lastUnknownNumber = num;
     }
 
     function lookup(numStr) {
@@ -236,43 +416,33 @@
     function setMode(mode) {
       currentMode = mode;
       const label = document.querySelector('label[for="jersey-input"]');
-      const hintEl = document.getElementById('hint');
-      const hintP = hintEl ? hintEl.querySelector('p') : null;
 
       if (mode === 'number') {
-        modeNumberBtn.classList.add('bg-white', 'shadow-sm');
-        modeNumberBtn.classList.remove('text-slate-600');
-        modeNameBtn.classList.remove('bg-white', 'shadow-sm');
-        modeNameBtn.classList.add('text-slate-600');
-
         input.type = 'number';
         input.inputMode = 'numeric';
         input.placeholder = '55';
         if (label) label.textContent = 'JERSEY NUMBER';
+        nameLookupBtn.textContent = 'Player Name Lookup';
 
-        if (hintP) hintP.textContent = 'Type a number above • 76 players total';
         nameResults.classList.add('hidden');
         nameResults.innerHTML = '';
       } else {
-        modeNameBtn.classList.add('bg-white', 'shadow-sm');
-        modeNameBtn.classList.remove('text-slate-600');
-        modeNumberBtn.classList.remove('bg-white', 'shadow-sm');
-        modeNumberBtn.classList.add('text-slate-600');
-
         input.type = 'text';
         input.inputMode = 'text';
         input.placeholder = 'name';
         if (label) label.textContent = 'PLAYER NAME';
+        nameLookupBtn.textContent = 'Jersey Number Lookup';
 
-        if (hintP) hintP.textContent = 'type';
         clearResults();
       }
       input.value = '';
       input.focus();
     }
 
-    modeNumberBtn.addEventListener('click', () => setMode('number'));
-    modeNameBtn.addEventListener('click', () => setMode('name'));
+    // Toggle between Number and Name lookup
+    nameLookupBtn.addEventListener('click', () => {
+      setMode(currentMode === 'number' ? 'name' : 'number');
+    });
 
     function renderNameResults(matches) {
       nameResults.innerHTML = '';
@@ -286,19 +456,15 @@
       }
       matches.slice(0, 10).forEach(player => {
         const item = document.createElement('div');
-        item.className = 'flex justify-between items-center p-3 mb-1 last:mb-0 border border-transparent hover:border-slate-200 active:bg-slate-50 rounded-2xl cursor-pointer';
-        const yearColor = player.year === 'Senior' ? 'text-emerald-600' : player.year === 'Junior' ? 'text-sky-600' : 'text-amber-600';
-        const gradeAbbr = { 'Senior': 'Sr', 'Junior': 'Jr', 'Sophomore': 'So' }[player.year] || player.year;
+        item.className = 'flex items-center gap-3 p-3 mb-1 last:mb-0 border border-transparent hover:border-slate-200 active:bg-slate-50 rounded-2xl cursor-pointer';
+        const yearColor = player.year === 'Senior' ? 'text-emerald-600' : player.year === 'Junior' ? 'text-sky-600' : player.year === 'Sophomore' ? 'text-amber-600' : 'text-pink-600';
         item.innerHTML = `
-          <div>
-            <div class="flex items-baseline gap-1">
-              <span class="font-mono text-3xl font-bold text-slate-800">${player.number}</span>
-              <span class="text-3xl font-semibold text-slate-400 mx-0.5">—</span>
-              <span class="text-3xl font-semibold">${player.name}</span>
-            </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-xl font-semibold text-left leading-snug">${player.name}</div>
+            <div class="text-sm font-bold ${yearColor}">${player.year}</div>
           </div>
-          <div class="text-right">
-            <span class="text-xl font-bold ${yearColor}">${gradeAbbr}</span>
+          <div class="flex-none w-14 h-14 rounded-full bg-[var(--accent)] flex items-center justify-center">
+            <span class="font-mono text-2xl font-bold text-white">${player.number}</span>
           </div>
         `;
         item.addEventListener('click', () => {
@@ -317,7 +483,7 @@
         return;
       }
       const q = query.toLowerCase().trim();
-      const matches = players.filter(p => p.name.toLowerCase().includes(q));
+      const matches = allPlayers.filter(p => p.name.toLowerCase().includes(q));
       renderNameResults(matches);
     }
 
@@ -358,9 +524,446 @@
       input.focus();
     });
 
+    // --- Report Player Modal ---
+    const playerModal = document.getElementById('player-modal');
+    const modalFirst = document.getElementById('modal-first');
+    const modalLast = document.getElementById('modal-last');
+    const modalGrade = document.getElementById('modal-grade');
+    const knowPlayerBtn = document.getElementById('know-player-btn');
+    const modalError = document.getElementById('modal-error');
+
+    function openModal(player) {
+      playerModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      modalError.classList.add('hidden');
+      if (player) {
+        const parts = player.name.split(' ');
+        modalFirst.value = parts.shift() || '';
+        modalLast.value = parts.join(' ');
+        modalGrade.value = player.year || '';
+        lastUnknownNumber = player.number;
+      } else {
+        modalFirst.value = '';
+        modalLast.value = '';
+        modalGrade.value = '';
+      }
+      setTimeout(() => modalFirst.focus(), 50);
+    }
+
+    function closeModal() {
+      playerModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    knowPlayerBtn.addEventListener('click', () => openModal());
+    document.getElementById('fix-error-link').addEventListener('click', (e) => {
+      e.preventDefault();
+      const player = rosterMap.get(lastUnknownNumber);
+      if (player) openModal(player);
+    });
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    document.getElementById('modal-cancel').addEventListener('click', closeModal);
+    playerModal.addEventListener('click', (e) => {
+      if (e.target === playerModal || e.target.classList.contains('bg-black/50')) closeModal();
+    });
+
+    function persistModal() {
+      const first = modalFirst.value.trim();
+      const last = modalLast.value.trim();
+      const grade = modalGrade.value;
+      if (!first || !last || !grade) {
+        modalError.classList.remove('hidden');
+        return null;
+      }
+      modalError.classList.add('hidden');
+
+      // Build the new player from the last unknown jersey number
+      if (lastUnknownNumber != null) {
+        const player = {
+          number: lastUnknownNumber,
+          name: first + ' ' + last,
+          year: grade
+        };
+        // Add to lookup map so a repeat jersey search finds them
+        rosterMap.set(player.number, player);
+        // Update the saved list (replace any prior entry for this number), persist to device
+        reportedPlayers = reportedPlayers.filter(p => p.number !== player.number);
+        reportedPlayers.push(player);
+        try {
+          localStorage.setItem('RosterLookupReported', JSON.stringify(reportedPlayers));
+        } catch (e) {}
+        allPlayers = basePlayers.concat(reportedPlayers);
+        showPlayer(player);
+        return player;
+      }
+      return null;
+    }
+
+    document.getElementById('modal-save').addEventListener('click', () => {
+      persistModal();
+      closeModal();
+    });
+
+    document.getElementById('modal-request').addEventListener('click', () => {
+      const player = persistModal();
+      closeModal();
+      if (!player) return;
+      // Compose the roster-update email and route through the intermediary modal
+      const subject = 'Roster Update';
+      const body = 'Send this note without editing it.\n\n\nRoster Change\n'
+        + 'Number: ' + player.number + '\n'
+        + 'First Name: ' + modalFirst.value.trim() + '\n'
+        + 'Last Name: ' + modalLast.value.trim() + '\n'
+        + 'Grade: ' + modalGrade.value.trim();
+      openEmailModal('lanyard@aleburd.com', subject, body);
+    });
+
+    // --- Email Intermediary Modal ---
+    const emailModal = document.getElementById('email-modal');
+    const emailMessage = document.getElementById('email-message');
+    let pendingEmail = null;
+
+    function openEmailModal(to, subject, body) {
+      pendingEmail = { to, subject, body };
+      let message = 'Sending an email to ' + to + ', Subject: ' + subject;
+      if (body) message += '\n\n' + body;
+      // Render as preformatted text so line breaks in the body are preserved
+      emailMessage.textContent = message;
+      emailMessage.className = 'text-sm text-slate-600 leading-snug mb-5 whitespace-pre-wrap text-left';
+      emailModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeEmailModal() {
+      emailModal.classList.add('hidden');
+      document.body.style.overflow = '';
+      pendingEmail = null;
+    }
+
+    function buildMailto() {
+      if (!pendingEmail) return null;
+      let url = 'mailto:' + pendingEmail.to + '?subject=' + encodeURIComponent(pendingEmail.subject);
+      if (pendingEmail.body) url += '&body=' + encodeURIComponent(pendingEmail.body);
+      return url;
+    }
+
+    document.getElementById('email-close').addEventListener('click', closeEmailModal);
+    document.getElementById('email-cancel').addEventListener('click', closeEmailModal);
+    document.getElementById('email-backdrop').addEventListener('click', closeEmailModal);
+    document.getElementById('email-copy').addEventListener('click', async () => {
+      const text = (pendingEmail ? pendingEmail.body : '') || '';
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (e) {
+        // Fallback for file:// / older browsers
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (_) {}
+        document.body.removeChild(ta);
+      }
+    });
+    document.getElementById('email-open').addEventListener('click', () => {
+      const url = buildMailto();
+      if (url) window.location.href = url;
+      closeEmailModal();
+    });
+
+    // Request a feature (footer link)
+    document.getElementById('feature-link').addEventListener('click', (e) => {
+      e.preventDefault();
+      openEmailModal('lanyard@aleburd.com', 'Feature Request', '');
+    });
+
+    // --- Install / Home Screen ---
+    let deferredPrompt = null;
+    const installLink = document.getElementById('install-link');
+    const installHint = document.getElementById('install-hint');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+
+    installLink.addEventListener('click', async (e) => {
+      e.preventDefault();
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        deferredPrompt = null;
+      } else {
+        // No native prompt available (file:// or iOS) — show manual instructions
+        installHint.classList.toggle('hidden');
+      }
+    });
+
+    // --- Remote Roster Change Detection ---
+    const remoteBell = document.getElementById('remote-bell');
+    const remoteModal = document.getElementById('remote-modal');
+    let remoteChangeDetected = false;
+
+    // Canonical fingerprint of the local roster (number, name, year only, stable order)
+    function localRosterFingerprint() {
+      return basePlayers
+        .map(p => [p.number, p.name, p.year].join('|'))
+        .sort()
+        .join('\n');
+    }
+
+    function remoteFingerprint(remoteList) {
+      if (!Array.isArray(remoteList)) return null;
+      return remoteList
+        .map(p => [p.number, p.name, p.year].join('|'))
+        .sort()
+        .join('\n');
+    }
+
+    // Extract the player list from the JSON (supports both the new {settings, players}
+    // shape and a bare array for backward compatibility).
+    function extractPlayers(data) {
+      if (Array.isArray(data)) return data;
+      if (data && Array.isArray(data.players)) return data.players;
+      return [];
+    }
+
+    // Apply title + accent color from the remote settings block (if present)
+    function applySettings(settings) {
+      if (!settings || typeof settings !== 'object') return;
+      if (settings.title) {
+        const h1 = document.getElementById('page-title');
+        if (h1) h1.textContent = settings.title;
+        document.title = settings.title;
+      }
+      if (settings.accentColor) {
+        document.documentElement.style.setProperty('--accent', settings.accentColor);
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', settings.accentColor);
+      }
+    }
+
+    async function checkRemoteRoster() {
+      try {
+        const res = await fetch(currentRoster.url + '?t=' + Date.now());
+        if (!res.ok) return; // offline / HTTP error — ignore silently
+        const data = await res.json();
+        latestRemoteRoster = extractPlayers(data);
+        applySettings(data.settings);
+        const remote = remoteFingerprint(latestRemoteRoster);
+        const local = localRosterFingerprint();
+        remoteChangeDetected = remote !== null && remote !== local;
+        if (remoteChangeDetected) {
+          remoteBell.classList.remove('hidden');
+        } else {
+          remoteBell.classList.add('hidden');
+        }
+      } catch (e) {
+        // Network or CORS failure — do nothing (offline is common when opened as file://)
+      }
+    }
+
+    function openRemoteModal() {
+      if (!remoteChangeDetected) return;
+      remoteModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRemoteModal() {
+      remoteModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    remoteBell.addEventListener('click', openRemoteModal);
+    document.getElementById('remote-cancel').addEventListener('click', closeRemoteModal);
+    document.getElementById('remote-backdrop').addEventListener('click', closeRemoteModal);
+
+    // Store the latest successfully-fetched remote roster so Reload can apply it in place
+    let latestRemoteRoster = null;
+
+    // Replace the live base roster with a fetched list (normalized), then overlay
+    // device-reported players. Used by both remote reload and roster switching.
+    function setBaseRoster(list) {
+      basePlayers = (Array.isArray(list) ? list : []).map(p => ({
+        number: p.number,
+        name: p.name,
+        year: p.year
+      }));
+      rosterMap.clear();
+      basePlayers.forEach(p => rosterMap.set(p.number, p));
+      reportedPlayers.forEach(p => rosterMap.set(p.number, p));
+      allPlayers = basePlayers.concat(reportedPlayers);
+      remoteChangeDetected = false;
+      remoteBell.classList.add('hidden');
+    }
+
+    function applyRemoteRoster() {
+      if (!Array.isArray(latestRemoteRoster) || latestRemoteRoster.length === 0) return;
+      setBaseRoster(latestRemoteRoster);
+      // Refresh the fingerprint baseline so the bell no longer flags this as a change
+      closeRemoteModal();
+    }
+
+    // A conflict = a locally reported player whose number exists in the remote
+    // roster with a different name or year (i.e. remote and local disagree).
+    function findConflicts(remoteList, locals) {
+      if (!Array.isArray(remoteList)) return [];
+      const remoteByNum = new Map();
+      remoteList.forEach(r => remoteByNum.set(r.number, r));
+      return (locals || []).filter(p => {
+        const r = remoteByNum.get(p.number);
+        return r && (r.name !== p.name || r.year !== p.year);
+      });
+    }
+
+    // Persist the reported players list to localStorage (after conflict resolution)
+    function saveReportedPlayers() {
+      try {
+        localStorage.setItem('RosterLookupReported', JSON.stringify(reportedPlayers));
+      } catch (e) {}
+    }
+
+    const conflictModal = document.getElementById('conflict-modal');
+
+    function openConflictModal() {
+      conflictModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConflictModal() {
+      conflictModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('conflict-backdrop').addEventListener('click', closeConflictModal);
+
+    // Keep a copy of the conflicts to resolve when a button is clicked
+    let pendingConflicts = [];
+
+    document.getElementById('remote-reload').addEventListener('click', async () => {
+      // If we don't have a fresh copy cached yet, fetch the remote before applying
+      if (!Array.isArray(latestRemoteRoster)) {
+        try {
+          const res = await fetch(currentRoster.url + '?t=' + Date.now());
+          if (res.ok) {
+            const data = await res.json();
+            latestRemoteRoster = extractPlayers(data);
+            applySettings(data.settings);
+          }
+        } catch (e) {}
+      }
+      if (!Array.isArray(latestRemoteRoster) || latestRemoteRoster.length === 0) return;
+
+      // Detect conflicts between local updates and the official roster
+      pendingConflicts = findConflicts(latestRemoteRoster, reportedPlayers);
+      if (pendingConflicts.length > 0) {
+        closeRemoteModal();
+        openConflictModal();
+        return;
+      }
+      // No conflicts — apply directly
+      applyRemoteRoster();
+    });
+
+    // "Yes" — use the official roster: drop the conflicting local updates, then apply
+    document.getElementById('conflict-yes').addEventListener('click', () => {
+      const dropNums = new Set(pendingConflicts.map(p => p.number));
+      reportedPlayers = reportedPlayers.filter(p => !dropNums.has(p.number));
+      saveReportedPlayers();
+      pendingConflicts = [];
+      closeConflictModal();
+      applyRemoteRoster();
+    });
+
+    // "No" — keep local updates: apply remote but let local entries win on conflicts
+    document.getElementById('conflict-no').addEventListener('click', () => {
+      pendingConflicts = [];
+      closeConflictModal();
+      applyRemoteRoster();
+    });
+
+    // --- Roster Switcher (title dropdown) ---
+    function renderRosterDropdown() {
+      rosterDropdown.innerHTML = '';
+      ROSTERS.forEach(r => {
+        const item = document.createElement('button');
+        const active = r.id === currentRosterId;
+        item.className = 'w-full flex items-center gap-2 px-4 py-3 text-left text-base rounded-xl ' +
+          (active ? 'bg-slate-100 text-slate-900 font-semibold' : 'text-slate-700 hover:bg-slate-50');
+        item.textContent = r.name;
+        if (active) {
+          const check = document.createElement('span');
+          check.className = 'text-slate-400 text-xs ml-auto';
+          check.textContent = '✓';
+          item.appendChild(check);
+        }
+        item.addEventListener('click', () => loadRoster(r.id));
+        rosterDropdown.appendChild(item);
+      });
+    }
+
+    function closeRosterDropdown() {
+      rosterDropdown.classList.add('hidden');
+    }
+
+    // Load a roster by id: persist the selection, then fetch + apply its remote JSON.
+    async function loadRoster(id) {
+      const roster = ROSTERS.find(r => r.id === id) || ROSTERS[0];
+      currentRosterId = roster.id;
+      currentRoster = roster;
+      try { localStorage.setItem('RosterSelectedId', roster.id); } catch (e) {}
+      renderRosterDropdown();
+      closeRosterDropdown();
+      // Reset the search UI for the new roster
+      setMode('number');
+      input.value = '';
+      clearResults();
+      nameResults.classList.add('hidden');
+      nameResults.innerHTML = '';
+      try {
+        const res = await fetch(roster.url + '?t=' + Date.now());
+        if (res.ok) {
+          const data = await res.json();
+          latestRemoteRoster = extractPlayers(data);
+          const hasPlayers = Array.isArray(latestRemoteRoster) && latestRemoteRoster.length > 0;
+          if (hasPlayers) setBaseRoster(latestRemoteRoster);
+          if (data.settings) applySettings(data.settings);
+          else applySettings(DEFAULT_SETTINGS);
+        } else {
+          // Offline/host refused: fall back to the roster's embedded copy if it has one;
+          // otherwise clear the base roster so stale players from a previous sport don't leak in
+          setBaseRoster(roster.embedded ? roster.embedded : []);
+          applySettings({ title: roster.name, accentColor: DEFAULT_SETTINGS.accentColor });
+        }
+      } catch (e) {
+        // Network failure (common on file://)
+        setBaseRoster(roster.embedded ? roster.embedded : []);
+        applySettings({ title: roster.name, accentColor: DEFAULT_SETTINGS.accentColor });
+      }
+    }
+
+    rosterTitleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      rosterDropdown.classList.toggle('hidden');
+    });
+    // Close the dropdown on outside click
+    document.addEventListener('click', (e) => {
+      if (!rosterDropdown.classList.contains('hidden') &&
+          !e.target.closest('#roster-title-btn') &&
+          !e.target.closest('#roster-dropdown')) {
+        closeRosterDropdown();
+      }
+    });
+    renderRosterDropdown();
+
+    // Check for remote changes on load and every 60 seconds
+    checkRemoteRoster();
+    setInterval(checkRemoteRoster, 60000);
+
     // Keyboard support: focus input when any key
     document.addEventListener('keydown', (e) => {
-      if (document.activeElement !== input && /^[0-9]$/.test(e.key)) {
+      if (playerModal.classList.contains('hidden') && document.activeElement !== input && /^[0-9]$/.test(e.key)) {
         input.focus();
       }
     });
@@ -371,13 +974,15 @@
 
     // Keyboard support: focus input when digit typed (number mode hint)
     document.addEventListener('keydown', (e) => {
-      if (document.activeElement !== input && currentMode === 'number' && /^[0-9]$/.test(e.key)) {
+      if (playerModal.classList.contains('hidden') && document.activeElement !== input && currentMode === 'number' && /^[0-9]$/.test(e.key)) {
         input.focus();
       }
     });
 
     // Initialize
     initTailwind();
+    // Load the persisted roster selection (defaults to Football); falls back to embedded on failure
+    loadRoster(currentRosterId);
     
     // Auto-focus the input on load
     setTimeout(() => {

@@ -1,0 +1,208 @@
+{
+  "settings": {
+    "title": "Soccer (Boys): Varsity Roster",
+    "accentColor": "#1144EB"
+  },
+  "players": [
+    {
+      "number": 1,
+      "name": "Grant Galvin",
+      "year": "Senior"
+    },
+    {
+      "number": 2,
+      "name": "Parker Riccio",
+      "year": "Junior"
+    },
+    {
+      "number": 3,
+      "name": "Joseph Arrunategui",
+      "year": "Senior"
+    },
+    {
+      "number": 4,
+      "name": "Thomas Graziosa - Captain",
+      "year": "Senior"
+    },
+    {
+      "number": 5,
+      "name": "Tommy Mora",
+      "year": "Junior"
+    },
+    {
+      "number": 6,
+      "name": "Dylan O'Connor - Captain",
+      "year": "Senior"
+    },
+    {
+      "number": 7,
+      "name": "Tyson Anavy",
+      "year": "Junior"
+    },
+    {
+      "number": 8,
+      "name": "Matteo De Benedittis - Captain",
+      "year": "Senior"
+    },
+    {
+      "number": 9,
+      "name": "Pierce Brawley",
+      "year": "Senior"
+    },
+    {
+      "number": 10,
+      "name": "Benett Higgins - Captain",
+      "year": "Senior"
+    },
+    {
+      "number": 11,
+      "name": "Luca Notaro",
+      "year": "Junior"
+    },
+    {
+      "number": 12,
+      "name": "Cameron Bysshe",
+      "year": "Junior"
+    },
+    {
+      "number": 13,
+      "name": "Max Childs",
+      "year": "Senior"
+    },
+    {
+      "number": 14,
+      "name": "Aiden O'Neill",
+      "year": "Senior"
+    },
+    {
+      "number": 15,
+      "name": "Rodrigo Miranda",
+      "year": "Senior"
+    },
+    {
+      "number": 16,
+      "name": "Eric Shepard",
+      "year": "Senior"
+    },
+    {
+      "number": 17,
+      "name": "Colin Casey",
+      "year": "Senior"
+    },
+    {
+      "number": 18,
+      "name": "Liam Ust",
+      "year": "Sophomore"
+    },
+    {
+      "number": 19,
+      "name": "Reed Sedlock",
+      "year": "Sophomore"
+    },
+    {
+      "number": 20,
+      "name": "Henry Decsi",
+      "year": "Sophomore"
+    },
+    {
+      "number": 21,
+      "name": "Marcus Shakir",
+      "year": "Senior"
+    },
+    {
+      "number": 22,
+      "name": "Brady Schaller",
+      "year": "Sophomore"
+    },
+    {
+      "number": 23,
+      "name": "Nolan Rous",
+      "year": "Junior"
+    },
+    {
+      "number": 24,
+      "name": "Mac Towell",
+      "year": "Junior"
+    },
+    {
+      "number": 25,
+      "name": "Joseph Cavolo",
+      "year": "Senior"
+    },
+    {
+      "number": 26,
+      "name": "Levi Perkins",
+      "year": "Senior"
+    },
+    {
+      "number": 27,
+      "name": "Conrad Hill",
+      "year": "Junior"
+    },
+    {
+      "number": 27,
+      "name": "Kenneth Arrunategui",
+      "year": "Senior"
+    },
+    {
+      "number": 28,
+      "name": "Kamden Swix",
+      "year": "Sophomore"
+    },
+    {
+      "number": 29,
+      "name": "Noah Brown",
+      "year": "Sophomore"
+    },
+    {
+      "number": 30,
+      "name": "Colin Murphy",
+      "year": "Sophomore"
+    },
+    {
+      "number": 31,
+      "name": "Jack Schaller",
+      "year": "Senior"
+    },
+    {
+      "number": 32,
+      "name": "Ryan Baiera",
+      "year": "Senior"
+    },
+    {
+      "number": 33,
+      "name": "Griffin Olson",
+      "year": "Junior"
+    },
+    {
+      "number": 34,
+      "name": "Harrison Dilts",
+      "year": "Senior"
+    },
+    {
+      "number": 35,
+      "name": "Fabian Quito",
+      "year": "Junior"
+    },
+    {
+      "number": 35,
+      "name": "Sam Harris",
+      "year": "Senior"
+    },
+    {
+      "number": 36,
+      "name": "John Christie",
+      "year": "Sophomore"
+    },
+    {
+      "number": 38,
+      "name": "Declan Leahy",
+      "year": "Sophomore"
+    },
+    {
+      "number": 41,
+      "name": "Connor Fahy",
+      "year": "Senior"
+    }
+  ]
+}
