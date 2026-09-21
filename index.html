@@ -252,8 +252,12 @@
         <h2 class="text-xl font-bold text-slate-900">Add to Home Screen</h2>
         <button id="install-close" class="text-3xl leading-none text-slate-400 hover:text-slate-600" aria-label="Close">&times;</button>
       </div>
-      <p class="text-sm text-slate-600 leading-snug mb-4">Use your browser's menu → <span class="font-semibold text-slate-700">"Add to Home Screen"</span> (Share → Add to Home Screen on iPhone).</p>
+      <p id="install-instructions" class="text-sm text-slate-600 leading-snug mb-4"></p>
       <div class="flex flex-col gap-2">
+        <button id="install-open"
+          class="w-full py-3 px-6 bg-[var(--accent)] hover:bg-[var(--accent)] active:bg-[var(--accent)] transition-colors text-white font-semibold rounded-2xl text-base">
+          Add to Home Screen
+        </button>
         <button id="install-gotit"
           class="w-full py-3 px-6 bg-slate-200 hover:bg-slate-300 active:bg-slate-400 transition-colors text-slate-800 font-semibold rounded-2xl text-base">
           Got it
@@ -796,8 +800,32 @@
     let deferredPrompt = null;
     const installLink = document.getElementById('install-link');
     const installModal = document.getElementById('install-modal');
+    const installInstructions = document.getElementById('install-instructions');
+
+    // Try to open the browser's native install UI. Returns true if one was
+    // triggered; false if the platform exposes no programmatic install (iOS).
+    function triggerNativeInstall() {
+      // 1. Preferred: beforeinstallprompt (Chrome/Edge/Android + WebKit where implemented)
+      const prompt = deferredPrompt || window.beforeInstallPrompt;
+      if (prompt && typeof prompt.prompt === 'function') {
+        try {
+          prompt.prompt();
+          if (deferredPrompt) deferredPrompt = null;
+          return true;
+        } catch (err) {
+          // fall through
+        }
+      }
+      // 2. Experimental Web Install API (Chrome/Edge 143+ origin trial)
+      if (typeof navigator.install === 'function') {
+        try { navigator.install(); return true; } catch (err) { /* fall through */ }
+      }
+      return false;
+    }
 
     function openInstallModal() {
+      const native = triggerNativeInstall();
+      if (native) return; // native prompt took over; don't overlay a modal
       installModal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     }
@@ -809,6 +837,13 @@
     document.getElementById('install-close').addEventListener('click', closeInstallModal);
     document.getElementById('install-gotit').addEventListener('click', closeInstallModal);
     document.getElementById('install-backdrop').addEventListener('click', closeInstallModal);
+    // Primary action: re-attempt the native install; if still unsupported, the
+    // modal's directive already tells the user what to do (Share -> Add to Home Screen).
+    document.getElementById('install-open').addEventListener('click', () => {
+      if (triggerNativeInstall()) {
+        closeInstallModal();
+      }
+    });
 
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
@@ -823,9 +858,22 @@
         deferredPrompt = null;
       } else {
         // No native prompt available (file:// or iOS) — show manual instructions
+        setInstallInstructions();
         openInstallModal();
       }
     });
+
+    // Per-platform directive shown inside the modal when no native prompt exists.
+    function setInstallInstructions() {
+      const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
+      if (isIos) {
+        installInstructions.innerHTML = 'Tap the <span class="font-semibold text-slate-700">Share</span> icon (box with an up arrow) in the address bar, scroll down, then tap <span class="font-semibold text-slate-700">"Add to Home Screen"</span>.';
+      } else if (/chrom(e|ium)|crios|edg/i.test(navigator.userAgent)) {
+        installInstructions.innerHTML = 'Tap the <span class="font-semibold text-slate-700">"Add to Home Screen"</span> button below, or use your browser\'s menu → <span class="font-semibold text-slate-700">"Add to Home Screen"</span>.';
+      } else {
+        installInstructions.innerHTML = 'Use your browser\'s menu → <span class="font-semibold text-slate-700">"Add to Home Screen"</span> (Share → Add to Home Screen on iPhone).';
+      }
+    }
 
     // --- Share ---
     document.getElementById('share-link').addEventListener('click', async (e) => {
