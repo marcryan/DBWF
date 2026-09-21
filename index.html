@@ -298,6 +298,9 @@
     // Default presentation settings — overridden by the remote roster.json settings block when fetched
     const DEFAULT_SETTINGS = { title: 'Football: Varsity Roster', accentColor: '#1144EB' };
     const players = [{"number":1,"name":"Liam Bortel","year":"Senior"},{"number":2,"name":"Jack Carlo","year":"Senior"},{"number":3,"name":"Luke Valenti","year":"Senior"},{"number":4,"name":"Bruce Hopkins","year":"Junior"},{"number":5,"name":"Michael O'Rourke","year":"Senior"},{"number":6,"name":"Luca Singh","year":"Senior"},{"number":7,"name":"Elias Alvarez","year":"Senior"},{"number":9,"name":"Jimmy Benedict","year":"Senior"},{"number":10,"name":"Winn Hapgood","year":"Junior"},{"number":11,"name":"Chaston Palen","year":"Senior"},{"number":12,"name":"Luciano Terrero","year":"Senior"},{"number":13,"name":"Henry Stuart","year":"Junior"},{"number":14,"name":"Vini Miranda","year":"Junior"},{"number":15,"name":"Gannon Collins","year":"Senior"},{"number":16,"name":"Hugh Dunlap","year":"Senior"},{"number":17,"name":"Jason Kirby","year":"Senior"},{"number":18,"name":"Aiden Ramos","year":"Senior"},{"number":19,"name":"Nicholas Rachinsky","year":"Junior"},{"number":20,"name":"Charlie Leff","year":"Junior"},{"number":21,"name":"Peter Blake","year":"Junior"},{"number":22,"name":"Jack Mitchell","year":"Junior"},{"number":23,"name":"Henry Emel","year":"Junior"},{"number":24,"name":"Rhodes Van Duyne","year":"Senior"},{"number":25,"name":"Baker Smith","year":"Junior"},{"number":26,"name":"Billy Eising","year":"Sophomore"},{"number":27,"name":"Cooper George","year":"Junior"},{"number":28,"name":"Connor Palomo","year":"Junior"},{"number":29,"name":"Aiden Clifford","year":"Sophomore"},{"number":30,"name":"Chase Kelly","year":"Sophomore"},{"number":31,"name":"John Altoe","year":"Sophomore"},{"number":32,"name":"Kellan Harwick","year":"Sophomore"},{"number":33,"name":"Connor Davenport","year":"Sophomore"},{"number":34,"name":"Sean Mihopoulos","year":"Junior"},{"number":35,"name":"Brody Balderach","year":"Sophomore"},{"number":36,"name":"Jack Mullane","year":"Sophomore"},{"number":37,"name":"John Davey","year":"Junior"},{"number":38,"name":"Tanner Hennemuth","year":"Junior"},{"number":39,"name":"Geordie duPont","year":"Sophomore"},{"number":40,"name":"Jack Ezbiansky","year":"Sophomore"},{"number":41,"name":"Monti Piasecki","year":"Sophomore"},{"number":42,"name":"Danny Cavoli","year":"Junior"},{"number":43,"name":"Troy Carper","year":"Sophomore"},{"number":44,"name":"Logan Ingulli","year":"Senior"},{"number":45,"name":"Kirk Zarghami","year":"Junior"},{"number":46,"name":"Jude McBride","year":"Sophomore"},{"number":48,"name":"Charlie McIntosh","year":"Sophomore"},{"number":49,"name":"Teddy Monahan","year":"Sophomore"},{"number":50,"name":"Hunter Spalsbury","year":"Senior"},{"number":51,"name":"Drew Agarabi","year":"Sophomore"},{"number":52,"name":"Will Giesen","year":"Sophomore"},{"number":54,"name":"Bowen Schroeder","year":"Sophomore"},{"number":55,"name":"Killian Ryan","year":"Sophomore"},{"number":56,"name":"Sean Smith","year":"Junior"},{"number":58,"name":"Joe Roche","year":"Junior"},{"number":60,"name":"Klevis Buqani","year":"Sophomore"},{"number":66,"name":"Michael Taylor","year":"Senior"},{"number":67,"name":"Jack Benedict","year":"Sophomore"},{"number":68,"name":"Max Eills","year":"Sophomore"},{"number":74,"name":"Tanner McWilliams","year":"Sophomore"},{"number":75,"name":"Thomas Cavolo","year":"Senior"},{"number":77,"name":"James Dionisio","year":"Senior"},{"number":78,"name":"Will Primmer","year":"Senior"},{"number":80,"name":"Brooks Bortel","year":"Sophomore"},{"number":81,"name":"Johnny Dunlap","year":"Sophomore"},{"number":82,"name":"Callum McBride","year":"Sophomore"},{"number":83,"name":"Brett Buys","year":"Junior"},{"number":84,"name":"Jameson Murphy","year":"Sophomore"},{"number":85,"name":"Ryan Kim","year":"Sophomore"},{"number":88,"name":"Ben Cohen","year":"Sophomore"},{"number":89,"name":"Patrick Kelly","year":"Senior"},{"number":90,"name":"Blake Wilson","year":"Junior"},{"number":91,"name":"Bo Benedict","year":"Junior"},{"number":95,"name":"Thomas Fogarty","year":"Junior"},{"number":97,"name":"Evan Ust","year":"Senior"},{"number":98,"name":"William Stramandinoli","year":"Junior"},{"number":99,"name":"Jack Turowski","year":"Sophomore"}];
+    // Embedded copy of every roster (offline fallback — fetched remote overrides)
+    const EMBEDDED_ROSTERS = {"football-boys":[{"number":1,"name":"Liam Bortel","year":"Senior"},{"number":2,"name":"Jack Carlo","year":"Senior"},{"number":3,"name":"Luke Valenti","year":"Senior"},{"number":4,"name":"Bruce Hopkins","year":"Junior"},{"number":5,"name":"Michael O'Rourke","year":"Senior"},{"number":6,"name":"Luca Singh","year":"Senior"},{"number":7,"name":"Elias Alvarez","year":"Senior"},{"number":8,"name":"Ryan Sweeney","year":"Senior"},{"number":9,"name":"Jimmy Benedict","year":"Senior"},{"number":10,"name":"Winn Hapgood","year":"Junior"},{"number":11,"name":"Chaseton Palen","year":"Senior"},{"number":12,"name":"Charlie Peters","year":"Junior"},{"number":13,"name":"Henry Stuart","year":"Junior"},{"number":14,"name":"Vini Miranda","year":"Junior"},{"number":15,"name":"Gannon Collins","year":"Senior"},{"number":16,"name":"Hugh Dunlap","year":"Senior"},{"number":17,"name":"Jason Kirby","year":"Senior"},{"number":18,"name":"Aiden Ramos","year":"Senior"},{"number":19,"name":"Nicholas Rachinsky","year":"Junior"},{"number":20,"name":"Charlie Leff","year":"Junior"},{"number":21,"name":"Peter Blake","year":"Junior"},{"number":22,"name":"Jack Mitchell","year":"Junior"},{"number":23,"name":"Henry Emel","year":"Junior"},{"number":25,"name":"Baker Smith","year":"Junior"},{"number":26,"name":"Billy Eising","year":"Sophomore"},{"number":27,"name":"Cooper George","year":"Junior"},{"number":29,"name":"Aiden Clifford","year":"Sophomore"},{"number":30,"name":"Chase Kelly","year":"Sophomore"},{"number":31,"name":"John Altoe","year":"Sophomore"},{"number":32,"name":"Kellan Harwick","year":"Sophomore"},{"number":33,"name":"Connor Davenport","year":"Sophomore"},{"number":34,"name":"Sean Mihopoulos","year":"Junior"},{"number":35,"name":"Brody Balderach","year":"Sophomore"},{"number":36,"name":"Jack Mullane","year":"Sophomore"},{"number":37,"name":"John Davey","year":"Junior"},{"number":38,"name":"Tanner Hennemuth","year":"Junior"},{"number":39,"name":"Geordie Du Pont","year":"Sophomore"},{"number":40,"name":"Jack Ezbiansky","year":"Sophomore"},{"number":41,"name":"Connor Palomo","year":"Junior"},{"number":41,"name":"Monty Piasecki","year":"Sophomore"},{"number":42,"name":"Danny Cavoli","year":"Junior"},{"number":43,"name":"Troy Carper","year":"Sophomore"},{"number":44,"name":"Logan Ingulli","year":"Senior"},{"number":45,"name":"Kirk Zaighami","year":"Junior"},{"number":46,"name":"Jude McBride","year":"Sophomore"},{"number":47,"name":"Will Lenich","year":"Freshman"},{"number":48,"name":"Charlie McIntosh","year":"Sophomore"},{"number":50,"name":"Hunter Spalsbury","year":"Senior"},{"number":51,"name":"Drew Agarabi","year":"Sophomore"},{"number":52,"name":"William Giesen III","year":"Sophomore"},{"number":54,"name":"Bowen Schroeder","year":"Sophomore"},{"number":55,"name":"Killian Ryan","year":"Sophomore"},{"number":56,"name":"Sean Smith","year":"Junior"},{"number":58,"name":"Joe Roche","year":"Junior"},{"number":66,"name":"Michael Taylor","year":"Senior"},{"number":67,"name":"Jack Benedict","year":"Sophomore"},{"number":68,"name":"Max Eills","year":"Sophomore"},{"number":72,"name":"Jacob Ocampo","year":"Junior"},{"number":74,"name":"Tanner McWilliams","year":"Sophomore"},{"number":75,"name":"Thomas Cavolo","year":"Senior"},{"number":77,"name":"James Dionisio","year":"Senior"},{"number":78,"name":"Will Primmer","year":"Senior"},{"number":80,"name":"Brooks Bortel","year":"Sophomore"},{"number":81,"name":"Henry Naidich","year":"Senior"},{"number":82,"name":"Callum McBride","year":"Sophomore"},{"number":83,"name":"Brett Buys","year":"Junior"},{"number":84,"name":"Jameson Murphy","year":"Sophomore"},{"number":87,"name":"Julian Gromelski","year":"Freshman"},{"number":88,"name":"Ben Cohen","year":"Sophomore"},{"number":89,"name":"Patrick Kelly","year":"Senior"},{"number":90,"name":"Blake Wilson","year":"Junior"},{"number":91,"name":"Bo Benedict","year":"Junior"},{"number":95,"name":"Thomas Fogarty","year":"Junior"},{"number":97,"name":"Evan Ust","year":"Senior"},{"number":98,"name":"William Stramandinoli","year":"Junior"},{"number":99,"name":"Jack Turowski","year":"Sophomore"}],"soccer-boys":[{"number":1,"name":"Grant Galvin","year":"Senior"},{"number":2,"name":"Parker Riccio","year":"Junior"},{"number":3,"name":"Joseph Arrunategui","year":"Senior"},{"number":4,"name":"Thomas Graziosa - Captain","year":"Senior"},{"number":5,"name":"Tommy Mora","year":"Junior"},{"number":6,"name":"Dylan O'Connor - Captain","year":"Senior"},{"number":7,"name":"Tyson Anavy","year":"Junior"},{"number":8,"name":"Matteo De Benedittis - Captain","year":"Senior"},{"number":9,"name":"Pierce Brawley","year":"Senior"},{"number":10,"name":"Benett Higgins - Captain","year":"Senior"},{"number":11,"name":"Luca Notaro","year":"Junior"},{"number":12,"name":"Cameron Bysshe","year":"Junior"},{"number":13,"name":"Max Childs","year":"Senior"},{"number":14,"name":"Aiden O'Neill","year":"Senior"},{"number":15,"name":"Rodrigo Miranda","year":"Senior"},{"number":16,"name":"Eric Shepard","year":"Senior"},{"number":17,"name":"Colin Casey","year":"Senior"},{"number":18,"name":"Liam Ust","year":"Sophomore"},{"number":19,"name":"Reed Sedlock","year":"Sophomore"},{"number":20,"name":"Henry Decsi","year":"Sophomore"},{"number":21,"name":"Marcus Shakir","year":"Senior"},{"number":22,"name":"Brady Schaller","year":"Sophomore"},{"number":23,"name":"Nolan Rous","year":"Junior"},{"number":24,"name":"Mac Towell","year":"Junior"},{"number":25,"name":"Joseph Cavolo","year":"Senior"},{"number":26,"name":"Levi Perkins","year":"Senior"},{"number":27,"name":"Conrad Hill","year":"Junior"},{"number":27,"name":"Kenneth Arrunategui","year":"Senior"},{"number":28,"name":"Kamden Swix","year":"Sophomore"},{"number":29,"name":"Noah Brown","year":"Sophomore"},{"number":30,"name":"Colin Murphy","year":"Sophomore"},{"number":31,"name":"Jack Schaller","year":"Senior"},{"number":32,"name":"Ryan Baiera","year":"Senior"},{"number":33,"name":"Griffin Olson","year":"Junior"},{"number":34,"name":"Harrison Dilts","year":"Senior"},{"number":35,"name":"Fabian Quito","year":"Junior"},{"number":35,"name":"Sam Harris","year":"Senior"},{"number":36,"name":"John Christie","year":"Sophomore"},{"number":38,"name":"Declan Leahy","year":"Sophomore"},{"number":41,"name":"Connor Fahy","year":"Senior"}],"soccer-girls":[{"number":1,"name":"Isla Ozanne","year":"Sophomore"},{"number":2,"name":"Ellery Kraus","year":"Sophomore"},{"number":3,"name":"Sarah Ryan - Captain","year":"Senior"},{"number":4,"name":"Sofia Bravo-Ferrer","year":"Sophomore"},{"number":5,"name":"Margot LeLarge","year":"Senior"},{"number":6,"name":"Mary - Captain","year":"Senior"},{"number":7,"name":"Avery White - Captain","year":"Senior"},{"number":8,"name":"Ava Cesare","year":"Junior"},{"number":9,"name":"Madison Hite","year":"Sophomore"},{"number":11,"name":"Katie","year":"Junior"},{"number":12,"name":"Peyton Ochman - Captain","year":"Senior"},{"number":13,"name":"Caroline Galligan","year":"Sophomore"},{"number":14,"name":"Avery Kollar","year":"Junior"},{"number":15,"name":"Molly","year":"Senior"},{"number":16,"name":"Bryn Charney","year":"Junior"},{"number":17,"name":"Maggie Lynch","year":"Junior"},{"number":18,"name":"Chloe Sherman","year":"Junior"},{"number":19,"name":"Sophia McAnany","year":"Sophomore"},{"number":20,"name":"Anais Biggers","year":"Senior"},{"number":21,"name":"Natalie Brooks","year":"Sophomore"},{"number":22,"name":"Caroline Smaldon","year":"Freshman"},{"number":23,"name":"Penny Vanovitch","year":"Senior"},{"number":24,"name":"Sydney Chernichaw","year":"Freshman"},{"number":25,"name":"Eliza Davis","year":"Freshman"},{"number":26,"name":"Sloane Hardy","year":"Senior"},{"number":27,"name":"Samantha Grambling","year":"Senior"},{"number":28,"name":"Riley Murphy","year":"Freshman"},{"number":29,"name":"Callie Fagan","year":"Freshman"}],"field-hockey":[{"number":1,"name":"Smosky, Molly","year":"Junior"},{"number":2,"name":"Annie","year":"Senior"},{"number":3,"name":"Ava Schneeberger","year":"Junior"},{"number":4,"name":"Skylar Stephens","year":"Sophomore"},{"number":5,"name":"Sheehan McAuliffe","year":"Senior"},{"number":6,"name":"Athena Ogle - Captain","year":"Senior"},{"number":7,"name":"Caroline Clemow","year":"Senior"},{"number":8,"name":"Kayla Koproski","year":"Senior"},{"number":9,"name":"Guiliana Franchetti","year":"Senior"},{"number":10,"name":"Chi-Wei Daugavietis","year":"Junior"},{"number":11,"name":"Avery Little","year":"Junior"},{"number":12,"name":"Madeline Wren","year":"Junior"},{"number":13,"name":"Elle Buckjune","year":"Senior"},{"number":14,"name":"Ava Welch - Captain","year":"Senior"},{"number":15,"name":"Ryann MacColl","year":"Junior"},{"number":16,"name":"Libby Meyer","year":"Junior"},{"number":17,"name":"Shannon Bock - Captain","year":"Senior"},{"number":18,"name":"Bella Zawacki","year":"Junior"},{"number":19,"name":"Sophie Beach - Captain","year":"Senior"},{"number":20,"name":"Serena Liddell","year":"Sophomore"},{"number":21,"name":"Bibi Osberg","year":"Freshman"},{"number":22,"name":"Maggie Huntington","year":"Sophomore"},{"number":98,"name":"Ella Harrison","year":"Junior"}],"volleyball-girls":[{"number":1,"name":"Nikolette Vuktilaj","year":"Junior"},{"number":2,"name":"Scarlett McCabe - Captain","year":"Senior"},{"number":3,"name":"Audrey Brooks - Captain","year":"Senior"},{"number":5,"name":"Tarajii Ellison","year":"Sophomore"},{"number":6,"name":"Brynn Burkhart","year":"Junior"},{"number":7,"name":"Marlene Davis","year":"Junior"},{"number":8,"name":"Lily Ryan","year":"Sophomore"},{"number":9,"name":"Maddy Smith","year":"Junior"},{"number":10,"name":"Julianne Telgheder","year":"Junior"},{"number":12,"name":"Zoey Frost-Spokes","year":"Sophomore"},{"number":13,"name":"Tarajii Ellison","year":"Sophomore"},{"number":13,"name":"Ada Rossi - Captain","year":"Senior"},{"number":15,"name":"Molly Maher","year":"Junior"},{"number":16,"name":"Ava Sorrells","year":"Junior"},{"number":18,"name":"Sienna Sorrells - Captain","year":"Senior"}]};
+
     
     // Build lookup map for O(1)
     const rosterMap = new Map();
@@ -307,11 +310,11 @@
 
     // Available rosters (embedded registry). Each points to a remote JSON file.
     const ROSTERS = [
-      { id: 'football-boys', name: 'Football Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-football-boys.json', embedded: players },
-      { id: 'soccer-boys', name: 'Soccer (Boys) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-soccer-boys.json' },
-      { id: 'soccer-girls', name: 'Soccer (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-soccer-girls.json' },
-      { id: 'field-hockey', name: 'Field Hockey (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-field-hockey.json' },
-      { id: 'volleyball-girls', name: 'Volleyball (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-volleyball-girls.json' }
+      { id: 'football-boys', name: 'Football Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-football-boys.json', embedded: EMBEDDED_ROSTERS['football-boys'] },
+      { id: 'soccer-boys', name: 'Soccer (Boys) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-soccer-boys.json', embedded: EMBEDDED_ROSTERS['soccer-boys'] },
+      { id: 'soccer-girls', name: 'Soccer (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-soccer-girls.json', embedded: EMBEDDED_ROSTERS['soccer-girls'] },
+      { id: 'field-hockey', name: 'Field Hockey (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-field-hockey.json', embedded: EMBEDDED_ROSTERS['field-hockey'] },
+      { id: 'volleyball-girls', name: 'Volleyball (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-volleyball-girls.json', embedded: EMBEDDED_ROSTERS['volleyball-girls'] }
     ];
     let currentRosterId = 'football-boys';
     try {
@@ -322,12 +325,33 @@
     const rosterTitleBtn = document.getElementById('roster-title-btn');
     const rosterDropdown = document.getElementById('roster-dropdown');
 
-    // Load any players reported/saved on this device (persisted across reloads)
-    let reportedPlayers = [];
-    try {
-      const saved = JSON.parse(localStorage.getItem('RosterLookupReported') || '[]');
-      if (Array.isArray(saved)) reportedPlayers = saved;
-    } catch (e) { reportedPlayers = []; }
+    // --- Per-roster reported-player storage ---
+    // Reports are scoped to the roster they were made on so changes to one sport
+    // never carry over to another. Key: RosterLookupReported:<rosterId>
+    function reportedStorageKey(id) {
+      return 'RosterLookupReported:' + (id || currentRosterId);
+    }
+    function loadReportedFor(id) {
+      // One-time migration: pre-switcher builds stored reports under the bare
+      // 'RosterLookupReported' key (which was always football). Fold it into
+      // the football-boys namespace so nothing is lost.
+      if (id === 'football-boys') {
+        const legacy = localStorage.getItem('RosterLookupReported');
+        if (legacy !== null && localStorage.getItem(reportedStorageKey(id)) === null) {
+          try { localStorage.setItem(reportedStorageKey(id), legacy); } catch (e) {}
+        }
+      }
+      try {
+        const saved = JSON.parse(localStorage.getItem(reportedStorageKey(id)) || '[]');
+        return Array.isArray(saved) ? saved : [];
+      } catch (e) { return []; }
+    }
+    function saveReported() {
+      try { localStorage.setItem(reportedStorageKey(), JSON.stringify(reportedPlayers)); } catch (e) {}
+    }
+
+    // Load any players reported/saved on this device for the ACTIVE roster only
+    let reportedPlayers = loadReportedFor(currentRosterId);
     reportedPlayers.forEach(p => rosterMap.set(p.number, p));
 
     // Combined list used by name search (base roster + device-saved players)
@@ -589,9 +613,7 @@
         // Update the saved list (replace any prior entry for this number), persist to device
         reportedPlayers = reportedPlayers.filter(p => p.number !== player.number);
         reportedPlayers.push(player);
-        try {
-          localStorage.setItem('RosterLookupReported', JSON.stringify(reportedPlayers));
-        } catch (e) {}
+        saveReported();
         allPlayers = basePlayers.concat(reportedPlayers);
         showPlayer(player);
         return player;
@@ -819,9 +841,7 @@
 
     // Persist the reported players list to localStorage (after conflict resolution)
     function saveReportedPlayers() {
-      try {
-        localStorage.setItem('RosterLookupReported', JSON.stringify(reportedPlayers));
-      } catch (e) {}
+      saveReported();
     }
 
     const conflictModal = document.getElementById('conflict-modal');
@@ -915,6 +935,10 @@
       try { localStorage.setItem('RosterSelectedId', roster.id); } catch (e) {}
       renderRosterDropdown();
       closeRosterDropdown();
+      // Switch the device-reported players to THIS roster's namespace before the
+      // base roster is built, so reports don't carry over from another sport.
+      reportedPlayers = loadReportedFor(roster.id);
+      allPlayers = basePlayers.concat(reportedPlayers);
       // Reset the search UI for the new roster
       setMode('number');
       input.value = '';
