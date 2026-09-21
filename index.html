@@ -342,14 +342,41 @@
     let basePlayers = players.slice();
     basePlayers.forEach(p => rosterMap.set(p.number, p));
 
-    // Available rosters. Each points to a remote JSON file.
-    const ROSTERS = [
-      { id: 'football-boys', name: 'Football Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-football-boys.json' },
-      { id: 'soccer-boys', name: 'Soccer (Boys) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-soccer-boys.json' },
-      { id: 'soccer-girls', name: 'Soccer (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-soccer-girls.json' },
-      { id: 'field-hockey', name: 'Field Hockey (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-field-hockey.json' },
-      { id: 'volleyball-girls', name: 'Volleyball (Girls) Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-volleyball-girls.json' }
+    // Roster list lives in rosters.json (a separate manifest) so adding a sport
+    // is a manifest edit, not a page edit. This single football entry is ONLY
+    // the offline/file:// fallback so the app always boots; the manifest is the
+    // source of truth once it loads.
+    const FALLBACK_ROSTERS = [
+      { id: 'football-boys', name: 'Football Varsity', url: 'https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-football-boys.json' }
     ];
+    let ROSTERS = [...FALLBACK_ROSTERS];
+    // Manifest candidates, tried in order: same-origin rosters.json first
+    // (hosted Pages), then the git-hosted mirror (so the list still loads when
+    // the app is opened over file:// with network).
+    const ROSTERS_MANIFEST_SOURCES = [
+      'rosters.json?t=' + Date.now(),
+      'https://raw.githubusercontent.com/marcryan/DBWF/main/rosters.json?t=' + Date.now()
+    ];
+    async function initRostersFromManifest() {
+      for (const src of ROSTERS_MANIFEST_SOURCES) {
+        try {
+          const res = await fetch(src);
+          if (!res.ok) continue;
+          const data = await res.json();
+          if (Array.isArray(data) && data.length > 0 &&
+              data.every(r => r && r.id && r.name && r.url)) {
+            ROSTERS = data;
+            break;
+          }
+        } catch (e) { /* try next source */ }
+      }
+      // Re-resolve the persisted selection against the (possibly updated) list.
+      let saved = null;
+      try { saved = localStorage.getItem('RosterSelectedId'); } catch (e) {}
+      currentRoster = ROSTERS.find(r => r.id === saved) || ROSTERS[0];
+      currentRosterId = currentRoster.id;
+      renderRosterDropdown();
+    }
     let currentRosterId = 'football-boys';
     try {
       const saved = localStorage.getItem('RosterSelectedId');
@@ -1122,7 +1149,8 @@
       allPlayers = basePlayers.concat(reportedPlayers);
       // Reset the search UI for the new roster
       setMode('number');
-      input.value = '';
+      jerseyDisplay.textContent = '';
+      nameInput.value = '';
       clearResults();
       nameResults.classList.add('hidden');
       nameResults.innerHTML = '';
@@ -1166,32 +1194,22 @@
     checkRemoteRoster();
     setInterval(checkRemoteRoster, 60000);
 
-    // Keyboard support: focus input when any key
-    document.addEventListener('keydown', (e) => {
-      if (playerModal.classList.contains('hidden') && document.activeElement !== input && /^[0-9]$/.test(e.key)) {
-        input.focus();
-      }
-    });
-
-
-    // Initialize default mode
-    setMode('number');
-
     // Keyboard support: focus input when digit typed (number mode hint)
     document.addEventListener('keydown', (e) => {
-      if (playerModal.classList.contains('hidden') && document.activeElement !== input && currentMode === 'number' && /^[0-9]$/.test(e.key)) {
-        input.focus();
+      if (playerModal.classList.contains('hidden') && document.activeElement !== nameInput && currentMode === 'number' && /^[0-9]$/.test(e.key)) {
+        nameInput.focus();
       }
     });
 
-    // Initialize
+    // Initialize. Resolve the roster manifest first so we load the correct
+    // persisted roster exactly once; falls back to the built-in football entry
+    // offline, then loadRoster handles the data fetch.
     initTailwind();
-    // Load the persisted roster selection (defaults to Football); falls back to embedded on failure
-    loadRoster(currentRosterId);
+    initRostersFromManifest().then(() => loadRoster(currentRosterId));
     
     // Auto-focus the input on load
     setTimeout(() => {
-      input.focus();
+      if (currentMode === 'name') nameInput.focus();
     }, 300);
 
     console.log('%c[2026 Roster Lookup] Mobile-optimized web app ready. Number + Name lookup.', 'color:#64748b');

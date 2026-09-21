@@ -1,0 +1,27 @@
+[
+  {
+    "id": "football-boys",
+    "name": "Football Varsity",
+    "url": "https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-football-boys.json"
+  },
+  {
+    "id": "soccer-boys",
+    "name": "Soccer (Boys) Varsity",
+    "url": "https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-soccer-boys.json"
+  },
+  {
+    "id": "soccer-girls",
+    "name": "Soccer (Girls) Varsity",
+    "url": "https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-soccer-girls.json"
+  },
+  {
+    "id": "field-hockey",
+    "name": "Field Hockey (Girls) Varsity",
+    "url": "https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-field-hockey.json"
+  },
+  {
+    "id": "volleyball-girls",
+    "name": "Volleyball (Girls) Varsity",
+    "url": "https://raw.githubusercontent.com/marcryan/DBWF/main/roster-app-volleyball-girls.json"
+  }
+]
