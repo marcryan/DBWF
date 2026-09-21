@@ -249,10 +249,10 @@
     <div class="fixed inset-0 bg-black/50" id="install-backdrop"></div>
     <div class="relative mx-auto my-8 w-full max-w-sm bg-white rounded-3xl shadow-2xl p-6">
       <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-bold text-slate-900">Add to Home Screen</h2>
+        <h2 class="text-2xl font-bold text-slate-900">Add to Home Screen</h2>
         <button id="install-close" class="text-3xl leading-none text-slate-400 hover:text-slate-600" aria-label="Close">&times;</button>
       </div>
-      <p id="install-instructions" class="text-sm text-slate-600 leading-snug mb-4"></p>
+      <p id="install-instructions" class="text-base text-slate-600 leading-snug mb-4"></p>
       <div class="flex flex-col gap-2">
         <button id="install-open"
           class="w-full py-3 px-6 bg-[var(--accent)] hover:bg-[var(--accent)] active:bg-[var(--accent)] transition-colors text-white font-semibold rounded-2xl text-base">
@@ -866,7 +866,10 @@
     // Per-platform directive shown inside the modal when no native prompt exists.
     function setInstallInstructions() {
       const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
-      if (isIos) {
+      const isSafariOnIos = isIos && /safari/i.test(navigator.userAgent) && !/crios|chrome|edg/i.test(navigator.userAgent);
+      if (isSafariOnIos) {
+        installInstructions.innerHTML = 'Press the button with <span class="font-semibold text-slate-700">three dots (&ctdot;)</span> in the toolbar, tap <span class="font-semibold text-slate-700">Share</span>, scroll down, then select <span class="font-semibold text-slate-700">"Add to Home Screen"</span>.';
+      } else if (isIos) {
         installInstructions.innerHTML = 'Tap the <span class="font-semibold text-slate-700">Share</span> icon (box with an up arrow) in the address bar, scroll down, then tap <span class="font-semibold text-slate-700">"Add to Home Screen"</span>.';
       } else if (/chrom(e|ium)|crios|edg/i.test(navigator.userAgent)) {
         installInstructions.innerHTML = 'Tap the <span class="font-semibold text-slate-700">"Add to Home Screen"</span> button below, or use your browser\'s menu → <span class="font-semibold text-slate-700">"Add to Home Screen"</span>.';
