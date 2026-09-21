@@ -1,0 +1,550 @@
+{
+  "sport": "Football - Boys",
+  "school": "Darien",
+  "nickname": "Blue Wave",
+  "coach": "Andy Grant",
+  "assistants": [
+    "Erle Ladson",
+    "Ben Joseph",
+    "Anthony Parelli",
+    "Brian Halapin",
+    "Amir Preston",
+    "David Benoit",
+    "Erik Linderbeck"
+  ],
+  "season_record": "1-1 (0.500)",
+  "players": [
+    {
+      "number": "1",
+      "name": "Liam Bortel",
+      "level": "V",
+      "position": "RB",
+      "grade": "12"
+    },
+    {
+      "number": "2",
+      "name": "Jack Carlo",
+      "level": "V",
+      "position": "WR",
+      "grade": "12"
+    },
+    {
+      "number": "3",
+      "name": "Luke Valenti",
+      "level": "V",
+      "position": "RB/DB",
+      "grade": "12"
+    },
+    {
+      "number": "4",
+      "name": "Bruce Hopkins",
+      "level": "V",
+      "position": "WR/DB",
+      "grade": "11"
+    },
+    {
+      "number": "5",
+      "name": "Michael O'Rourke",
+      "level": "V",
+      "position": "LB",
+      "grade": "12"
+    },
+    {
+      "number": "6",
+      "name": "Luca Singh",
+      "level": "V",
+      "position": "DB",
+      "grade": "12"
+    },
+    {
+      "number": "7",
+      "name": "Elias Alvarez",
+      "level": "V",
+      "position": "WR/K",
+      "grade": "12"
+    },
+    {
+      "number": "8",
+      "name": "Ryan Sweeney",
+      "level": "V",
+      "position": "RB/LB",
+      "grade": "12"
+    },
+    {
+      "number": "9",
+      "name": "Jimmy Benedict",
+      "level": "V",
+      "position": "WR/DB",
+      "grade": "12"
+    },
+    {
+      "number": "10",
+      "name": "Winn Hapgood",
+      "level": "V",
+      "position": "LB/RB",
+      "grade": "11"
+    },
+    {
+      "number": "11",
+      "name": "Chaseton Palen",
+      "level": "V",
+      "position": "DL",
+      "grade": "12"
+    },
+    {
+      "number": "12",
+      "name": "Charlie Peters",
+      "level": "V",
+      "position": "WR/DB",
+      "grade": "11"
+    },
+    {
+      "number": "13",
+      "name": "Henry Stuart",
+      "level": "V",
+      "position": "LB",
+      "grade": "11"
+    },
+    {
+      "number": "14",
+      "name": "Vini Miranda",
+      "level": "V",
+      "position": "WR/DB",
+      "grade": "11"
+    },
+    {
+      "number": "15",
+      "name": "Gannon Collins",
+      "level": "V",
+      "position": "DL/K",
+      "grade": "12"
+    },
+    {
+      "number": "16",
+      "name": "Hugh Dunlap",
+      "level": "V",
+      "position": "DB",
+      "grade": "12"
+    },
+    {
+      "number": "17",
+      "name": "Jason Kirby",
+      "level": "V",
+      "position": "RB",
+      "grade": "12"
+    },
+    {
+      "number": "18",
+      "name": "Aiden Ramos",
+      "level": "V",
+      "position": "DB",
+      "grade": "12"
+    },
+    {
+      "number": "19",
+      "name": "Nicholas Rachinsky",
+      "level": "V",
+      "position": "WR",
+      "grade": "11"
+    },
+    {
+      "number": "20",
+      "name": "Charlie Leff",
+      "level": "V",
+      "position": "LB",
+      "grade": "11"
+    },
+    {
+      "number": "21",
+      "name": "Peter Blake",
+      "level": "V",
+      "position": "DB",
+      "grade": "11"
+    },
+    {
+      "number": "22",
+      "name": "Jack Mitchell",
+      "level": "V",
+      "position": "DB",
+      "grade": "11"
+    },
+    {
+      "number": "23",
+      "name": "Henry Emel",
+      "level": "V",
+      "position": "WR",
+      "grade": "11"
+    },
+    {
+      "number": "25",
+      "name": "Baker Smith",
+      "level": "V",
+      "position": "DB",
+      "grade": "11"
+    },
+    {
+      "number": "26",
+      "name": "Billy Eising",
+      "level": "V",
+      "position": "LB",
+      "grade": "10"
+    },
+    {
+      "number": "27",
+      "name": "Cooper George",
+      "level": "V",
+      "position": "DB",
+      "grade": "11"
+    },
+    {
+      "number": "29",
+      "name": "Aiden Clifford",
+      "level": "V",
+      "position": "DL",
+      "grade": "10"
+    },
+    {
+      "number": "30",
+      "name": "Chase Kelly",
+      "level": "V",
+      "position": "LB",
+      "grade": "10"
+    },
+    {
+      "number": "31",
+      "name": "John Altoe",
+      "level": "V",
+      "position": "RB/DB",
+      "grade": "10"
+    },
+    {
+      "number": "32",
+      "name": "Kellan Harwick",
+      "level": "V",
+      "position": "LB",
+      "grade": "10"
+    },
+    {
+      "number": "33",
+      "name": "Connor Davenport",
+      "level": "V",
+      "position": "QB",
+      "grade": "10"
+    },
+    {
+      "number": "34",
+      "name": "Sean Mihopoulos",
+      "level": "V",
+      "position": "RB/LB",
+      "grade": "11"
+    },
+    {
+      "number": "35",
+      "name": "Brody Balderach",
+      "level": "V",
+      "position": "DB",
+      "grade": "10"
+    },
+    {
+      "number": "36",
+      "name": "Jack Mullane",
+      "level": "V",
+      "position": "QB",
+      "grade": "10"
+    },
+    {
+      "number": "37",
+      "name": "John Davey",
+      "level": "V",
+      "position": "QB",
+      "grade": "11"
+    },
+    {
+      "number": "38",
+      "name": "Tanner Hennemuth",
+      "level": "V",
+      "position": "LB/RB",
+      "grade": "11"
+    },
+    {
+      "number": "39",
+      "name": "Geordie Du Pont",
+      "level": "V",
+      "position": "DL",
+      "grade": "10"
+    },
+    {
+      "number": "40",
+      "name": "Jack Ezbiansky",
+      "level": "V",
+      "position": "WR",
+      "grade": "10"
+    },
+    {
+      "number": "41",
+      "name": "Connor Palomo",
+      "level": "V",
+      "position": "DB",
+      "grade": "11"
+    },
+    {
+      "number": "41",
+      "name": "Monty Piasecki",
+      "level": "V",
+      "position": "WR",
+      "grade": "10"
+    },
+    {
+      "number": "42",
+      "name": "Danny Cavoli",
+      "level": "V",
+      "position": "LB",
+      "grade": "11"
+    },
+    {
+      "number": "43",
+      "name": "Troy Carper",
+      "level": "V",
+      "position": "WR",
+      "grade": "10"
+    },
+    {
+      "number": "44",
+      "name": "Logan Ingulli",
+      "level": "V",
+      "position": "DL",
+      "grade": "12"
+    },
+    {
+      "number": "45",
+      "name": "Kirk Zaighami",
+      "level": "V",
+      "position": "LB",
+      "grade": "11"
+    },
+    {
+      "number": "46",
+      "name": "Jude McBride",
+      "level": "V",
+      "position": "RB",
+      "grade": "10"
+    },
+    {
+      "number": "47",
+      "name": "Will Lenich",
+      "level": "V",
+      "position": "TE",
+      "grade": "9"
+    },
+    {
+      "number": "48",
+      "name": "Charlie McIntosh",
+      "level": "V",
+      "position": "DB",
+      "grade": "10"
+    },
+    {
+      "number": "50",
+      "name": "Hunter Spalsbury",
+      "level": "V",
+      "position": "DL",
+      "grade": "12"
+    },
+    {
+      "number": "51",
+      "name": "Drew Agarabi",
+      "level": "V",
+      "position": "OL",
+      "grade": "10"
+    },
+    {
+      "number": "52",
+      "name": "William Giesen III",
+      "level": "V",
+      "position": "OL",
+      "grade": "10"
+    },
+    {
+      "number": "54",
+      "name": "Bowen Schroeder",
+      "level": "V",
+      "position": "OL/DL",
+      "grade": "10"
+    },
+    {
+      "number": "55",
+      "name": "Killian Ryan",
+      "level": "V",
+      "position": "OL/DL",
+      "grade": "10"
+    },
+    {
+      "number": "56",
+      "name": "Sean Smith",
+      "level": "V",
+      "position": "OL",
+      "grade": "11"
+    },
+    {
+      "number": "58",
+      "name": "Joe Roche",
+      "level": "V",
+      "position": "OL/DB",
+      "grade": "11"
+    },
+    {
+      "number": "66",
+      "name": "Michael Taylor",
+      "level": "V",
+      "position": "OL",
+      "grade": "12"
+    },
+    {
+      "number": "67",
+      "name": "Jack Benedict",
+      "level": "V",
+      "position": "DL",
+      "grade": "10"
+    },
+    {
+      "number": "68",
+      "name": "Max Eills",
+      "level": "V",
+      "position": "OL/DL",
+      "grade": "10"
+    },
+    {
+      "number": "72",
+      "name": "Jacob Ocampo",
+      "level": "V",
+      "position": "OL",
+      "grade": "11"
+    },
+    {
+      "number": "74",
+      "name": "Tanner McWilliams",
+      "level": "V",
+      "position": "OL/DL/TE",
+      "grade": "10"
+    },
+    {
+      "number": "75",
+      "name": "Thomas Cavolo",
+      "level": "V",
+      "position": "OL",
+      "grade": "12"
+    },
+    {
+      "number": "77",
+      "name": "James Dionisio",
+      "level": "V",
+      "position": "OL/DL",
+      "grade": "12"
+    },
+    {
+      "number": "78",
+      "name": "Will Primmer",
+      "level": "V",
+      "position": "OL/DL",
+      "grade": "12"
+    },
+    {
+      "number": "80",
+      "name": "Brooks Bortel",
+      "level": "V",
+      "position": "WR",
+      "grade": "10"
+    },
+    {
+      "number": "81",
+      "name": "Henry Naidich",
+      "level": "V",
+      "position": "WR/DB",
+      "grade": "12"
+    },
+    {
+      "number": "82",
+      "name": "Callum McBride",
+      "level": "V",
+      "position": "WR/DB",
+      "grade": "10"
+    },
+    {
+      "number": "83",
+      "name": "Brett Buys",
+      "level": "V",
+      "position": "WR",
+      "grade": "11"
+    },
+    {
+      "number": "84",
+      "name": "Jameson Murphy",
+      "level": "V",
+      "position": "DB",
+      "grade": "10"
+    },
+    {
+      "number": "87",
+      "name": "Julian Gromelski",
+      "level": "V",
+      "position": "WR",
+      "grade": "9"
+    },
+    {
+      "number": "88",
+      "name": "Ben Cohen",
+      "level": "V",
+      "position": "WR",
+      "grade": "10"
+    },
+    {
+      "number": "89",
+      "name": "Patrick Kelly",
+      "level": "V",
+      "position": "DL",
+      "grade": "12"
+    },
+    {
+      "number": "90",
+      "name": "Blake Wilson",
+      "level": "V",
+      "position": "DL",
+      "grade": "11"
+    },
+    {
+      "number": "91",
+      "name": "Bo Benedict",
+      "level": "V",
+      "position": "LB",
+      "grade": "11"
+    },
+    {
+      "number": "95",
+      "name": "Thomas Fogarty",
+      "level": "V",
+      "position": "DB",
+      "grade": "11"
+    },
+    {
+      "number": "97",
+      "name": "Evan Ust",
+      "level": "V",
+      "position": "K",
+      "grade": "12"
+    },
+    {
+      "number": "98",
+      "name": "William Stramandinoli",
+      "level": "V",
+      "position": "DL",
+      "grade": "11"
+    },
+    {
+      "number": "99",
+      "name": "Jack Turowski",
+      "level": "V",
+      "position": "DL",
+      "grade": "10"
+    }
+  ]
+}

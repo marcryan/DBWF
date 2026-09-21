@@ -1,0 +1,186 @@
+{
+  "sport": "Soccer - Girls",
+  "school": "Darien",
+  "nickname": "Blue Wave",
+  "coach": "Leigh Parsons",
+  "assistants": [
+    "Michael Fraioli"
+  ],
+  "season_record": "3-1 (0.750)",
+  "players": [
+    {
+      "number": "0",
+      "name": "Adriana Gromelski",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "1",
+      "name": "Isla Ozanne",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "2",
+      "name": "Ellery Kraus",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "3",
+      "name": "Sarah Ryan - Captain",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "4",
+      "name": "Sofia Bravo-Ferrer",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "5",
+      "name": "Margot LeLarge",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "6",
+      "name": "Mary - Captain",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "7",
+      "name": "Avery White - Captain",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "8",
+      "name": "Ava Cesare",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "9",
+      "name": "Madison Hite",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "11",
+      "name": "Katie",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "12",
+      "name": "Peyton Ochman - Captain",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "13",
+      "name": "Caroline Galligan",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "14",
+      "name": "Avery Kollar",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "15",
+      "name": "Molly",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "16",
+      "name": "Bryn Charney",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "17",
+      "name": "Maggie Lynch",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "18",
+      "name": "Chloe Sherman",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "19",
+      "name": "Sophia McAnany",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "20",
+      "name": "Anais Biggers",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "21",
+      "name": "Natalie Brooks",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "22",
+      "name": "Caroline Smaldon",
+      "level": "V",
+      "grade": "9"
+    },
+    {
+      "number": "23",
+      "name": "Penny Vanovitch",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "24",
+      "name": "Sydney Chernichaw",
+      "level": "V",
+      "grade": "9"
+    },
+    {
+      "number": "25",
+      "name": "Eliza Davis",
+      "level": "V",
+      "grade": "9"
+    },
+    {
+      "number": "26",
+      "name": "Sloane Hardy",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "27",
+      "name": "Samantha Grambling",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "28",
+      "name": "Riley Murphy",
+      "level": "V",
+      "grade": "9"
+    },
+    {
+      "number": "29",
+      "name": "Callie Fagan",
+      "level": "V",
+      "grade": "9"
+    }
+  ]
+}

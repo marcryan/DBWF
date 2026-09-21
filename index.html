@@ -51,6 +51,10 @@
       text-align: center;
       letter-spacing: 0.05em;
     }
+    #jersey-display:empty::before {
+      content: '55';
+      color: #94a3b8;
+    }
     .result-card {
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -81,26 +85,31 @@
 
     <!-- Input -->
     <div class="bg-white rounded-3xl shadow-xl p-6 mb-4">
-      <label for="jersey-input" class="block text-sm font-semibold text-slate-500 mb-2 tracking-widest">JERSEY NUMBER</label>
-      <div class="relative">
-        <input 
-          id="jersey-input" 
-          type="number" 
-          min="1" 
-          max="99" 
-          inputmode="numeric"
-          pattern="[0-9]*"
-          class="big-input w-full bg-slate-50 border-2 border-slate-200 focus:border-slate-900 rounded-2xl outline-none transition-colors placeholder:text-slate-300"
-          placeholder="55"
-          autocomplete="off"
-        >
+      <div class="flex items-center justify-between mb-2">
+        <label id="jersey-label" class="text-sm font-semibold text-slate-500 tracking-widest">JERSEY NUMBER</label>
+        <button id="remote-link" class="hidden text-sm font-semibold text-red-500 hover:text-red-700 transition-colors"
+          aria-label="Update roster">Update</button>
       </div>
-      <div class="mt-4">
-        <button id="clear-btn"
-          class="w-full py-2 px-6 bg-slate-200 hover:bg-slate-300 active:bg-slate-400 transition-colors text-slate-700 font-semibold rounded-2xl text-base">
-          Clear
+      <div class="grid grid-cols-5 gap-2">
+        <div id="jersey-display"
+          class="big-input col-span-4 bg-slate-50 border-2 border-slate-200 rounded-2xl flex items-center justify-center text-slate-400"
+          aria-live="polite"></div>
+        <input
+          id="name-input"
+          type="text"
+          inputmode="text"
+          placeholder="name"
+          autocomplete="off"
+          class="hidden big-input col-span-4 bg-slate-50 border-2 border-slate-200 focus:border-slate-900 rounded-2xl outline-none transition-colors placeholder:text-slate-300"
+        >
+        <button id="clear-btn" aria-label="Clear"
+          class="col-span-1 bg-slate-200 hover:bg-slate-300 active:bg-slate-400 transition-colors text-slate-600 rounded-xl flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+            <path d="M6 6 L18 18 M6 18 L18 6"/>
+          </svg>
         </button>
       </div>
+      <div id="jersey-keypad" class="mt-4"></div>
     </div>
 
     <div id="name-results" class="hidden mb-4 bg-white rounded-3xl shadow-xl p-2 border border-slate-100 max-h-[280px] overflow-auto">
@@ -283,10 +292,7 @@
     </div>
   </div>
 
-  <!-- Remote change notification bell -->
-  <button id="remote-bell"
-    class="hidden fixed bottom-6 right-6 w-14 h-14 rounded-full bg-[var(--accent)] text-white text-2xl flex items-center justify-center shadow-xl hover:bg-[var(--accent)] active:bg-[var(--accent)] z-40"
-    aria-label="Roster change available" title="Roster change available">🔔</button>
+  <!-- Remote change notification is the red "reload" link beside the Jersey Number label -->
 
   <script>
     // Tailwind script
@@ -356,7 +362,8 @@
     // Combined list used by name search (base roster + device-saved players)
     let allPlayers = basePlayers.concat(reportedPlayers);
 
-    const input = document.getElementById('jersey-input');
+    const jerseyDisplay = document.getElementById('jersey-display');
+    const nameInput = document.getElementById('name-input');
     const resultArea = document.getElementById('result-area');
     const resultCard = document.getElementById('result-card');
     const notFound = document.getElementById('not-found');
@@ -436,30 +443,105 @@
     }
 
 
+    // --- Jersey number keypad ---
+    const keypad = document.getElementById('jersey-keypad');
+
+    function buildKeypad() {
+      keypad.innerHTML = '';
+
+      const keyClass = 'h-11 text-2xl font-bold bg-slate-100 hover:bg-slate-200 active:bg-slate-300 transition-colors text-slate-800 rounded-xl';
+      const rowClass = 'grid grid-cols-5 gap-2';
+
+      const grid = document.createElement('div');
+      grid.className = 'grid gap-2';
+
+      const row1 = document.createElement('div');
+      row1.className = rowClass;
+      for (let d = 1; d <= 5; d++) {
+        row1.appendChild(makeKey(d, keyClass));
+      }
+      grid.appendChild(row1);
+
+      const row2 = document.createElement('div');
+      row2.className = rowClass;
+      for (let d = 6; d <= 9; d++) {
+        row2.appendChild(makeKey(d, keyClass));
+      }
+      row2.appendChild(makeKey(0, keyClass));
+      grid.appendChild(row2);
+
+      keypad.appendChild(grid);
+    }
+
+    function makeKey(d, keyClass) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = d;
+      b.className = keyClass;
+      b.addEventListener('click', () => appendDigit(d));
+      return b;
+    }
+
+    // Window (ms) after a key press within which a NEW digit appends to the current
+    // value instead of starting a fresh entry. Once exceeded (or once 2 digits are in
+    // the field), the next key press clears the field and starts a new lookup.
+    const SINGLE_DIGIT_WINDOW_MS = 1200;
+    let lastInputTime = 0;
+
+    function appendDigit(d) {
+      const now = Date.now();
+      const hasTwoDigits = jerseyDisplay.textContent.length >= 2;
+      const stale = (now - lastInputTime) > SINGLE_DIGIT_WINDOW_MS;
+
+      // 2 digits already entered, or the previous single digit has expired -> start over
+      if (hasTwoDigits || stale) {
+        jerseyDisplay.textContent = String(d);
+      } else {
+        jerseyDisplay.textContent = (jerseyDisplay.textContent + d).slice(0, 2);
+      }
+
+      lastInputTime = now;
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        lookup(jerseyDisplay.textContent.trim());
+      }, 130);
+    }
+
+    buildKeypad();
+
+    document.getElementById('clear-btn').addEventListener('click', () => {
+      jerseyDisplay.textContent = '';
+      clearResults();
+      nameResults.classList.add('hidden');
+      nameResults.innerHTML = '';
+    });
+
     function setMode(mode) {
       currentMode = mode;
-      const label = document.querySelector('label[for="jersey-input"]');
+      const label = document.getElementById('jersey-label');
 
       if (mode === 'number') {
-        input.type = 'number';
-        input.inputMode = 'numeric';
-        input.placeholder = '55';
         if (label) label.textContent = 'JERSEY NUMBER';
+        label.htmlFor = '';
         nameLookupBtn.textContent = 'Player Name Lookup';
+        keypad.classList.remove('hidden');
+        jerseyDisplay.classList.remove('hidden');
+        nameInput.classList.add('hidden');
 
         nameResults.classList.add('hidden');
         nameResults.innerHTML = '';
       } else {
-        input.type = 'text';
-        input.inputMode = 'text';
-        input.placeholder = 'name';
         if (label) label.textContent = 'PLAYER NAME';
+        label.htmlFor = 'name-input';
         nameLookupBtn.textContent = 'Jersey Number Lookup';
+        keypad.classList.add('hidden');
+        jerseyDisplay.classList.add('hidden');
+        nameInput.classList.remove('hidden');
 
         clearResults();
       }
-      input.value = '';
-      input.focus();
+      nameInput.value = '';
+      nameInput.focus();
     }
 
     // Toggle between Number and Name lookup
@@ -510,11 +592,11 @@
       renderNameResults(matches);
     }
 
-    // Live search with debounce
-    input.addEventListener('input', () => {
+    // Live search with debounce (name mode only — the jersey number is keypad-driven)
+    nameInput.addEventListener('input', () => {
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(() => {
-        const val = input.value.trim();
+        const val = nameInput.value.trim();
         if (currentMode === 'number') {
           lookup(val);
         } else {
@@ -524,10 +606,10 @@
     });
 
     // Enter key
-    input.addEventListener('keydown', (e) => {
+    nameInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         clearTimeout(debounceTimer);
-        const val = input.value.trim();
+        const val = nameInput.value.trim();
         if (currentMode === 'number') {
           lookup(val);
         } else {
@@ -536,15 +618,6 @@
           if (first) first.click();
         }
       }
-    });
-
-    // Clear button
-    document.getElementById('clear-btn').addEventListener('click', () => {
-      input.value = '';
-      clearResults();
-      nameResults.classList.add('hidden');
-      nameResults.innerHTML = '';
-      input.focus();
     });
 
     // --- Report Player Modal ---
@@ -722,7 +795,7 @@
     });
 
     // --- Remote Roster Change Detection ---
-    const remoteBell = document.getElementById('remote-bell');
+    const remoteLink = document.getElementById('remote-link');
     const remoteModal = document.getElementById('remote-modal');
     let remoteChangeDetected = false;
 
@@ -776,9 +849,9 @@
         const local = localRosterFingerprint();
         remoteChangeDetected = remote !== null && remote !== local;
         if (remoteChangeDetected) {
-          remoteBell.classList.remove('hidden');
+          remoteLink.classList.remove('hidden');
         } else {
-          remoteBell.classList.add('hidden');
+          remoteLink.classList.add('hidden');
         }
       } catch (e) {
         // Network or CORS failure — do nothing (offline is common when opened as file://)
@@ -796,7 +869,7 @@
       document.body.style.overflow = '';
     }
 
-    remoteBell.addEventListener('click', openRemoteModal);
+    remoteLink.addEventListener('click', openRemoteModal);
     document.getElementById('remote-cancel').addEventListener('click', closeRemoteModal);
     document.getElementById('remote-backdrop').addEventListener('click', closeRemoteModal);
 
@@ -816,7 +889,7 @@
       reportedPlayers.forEach(p => rosterMap.set(p.number, p));
       allPlayers = basePlayers.concat(reportedPlayers);
       remoteChangeDetected = false;
-      remoteBell.classList.add('hidden');
+      remoteLink.classList.add('hidden');
     }
 
     function applyRemoteRoster() {

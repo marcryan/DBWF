@@ -1,0 +1,261 @@
+{
+  "sport": "Soccer - Boys",
+  "school": "Darien",
+  "nickname": "Blue Wave",
+  "coach": "Jon Bradley",
+  "assistants": [
+    "Linda Velaj"
+  ],
+  "season_record": "2-0-2 (0.750)",
+  "players": [
+    {
+      "number": "0",
+      "name": "Liam Sweeney",
+      "level": "V",
+      "position": "GK",
+      "grade": "10"
+    },
+    {
+      "number": "1",
+      "name": "Grant Galvin",
+      "level": "V",
+      "position": "GK",
+      "grade": "12"
+    },
+    {
+      "number": "2",
+      "name": "Parker Riccio",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "3",
+      "name": "Joseph Arrunategui",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "4",
+      "name": "Thomas Graziosa - Captain",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "5",
+      "name": "Tommy Mora",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "6",
+      "name": "Dylan O'Connor - Captain",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "7",
+      "name": "Tyson Anavy",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "8",
+      "name": "Matteo De Benedittis - Captain",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "9",
+      "name": "Pierce Brawley",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "10",
+      "name": "Benett Higgins - Captain",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "11",
+      "name": "Luca Notaro",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "12",
+      "name": "Cameron Bysshe",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "13",
+      "name": "Max Childs",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "14",
+      "name": "Aiden O'Neill",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "15",
+      "name": "Rodrigo Miranda",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "16",
+      "name": "Eric Shepard",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "17",
+      "name": "Colin Casey",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "18",
+      "name": "Liam Ust",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "19",
+      "name": "Reed Sedlock",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "20",
+      "name": "Henry Decsi",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "21",
+      "name": "Marcus Shakir",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "22",
+      "name": "Brady Schaller",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "23",
+      "name": "Nolan Rous",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "24",
+      "name": "Mac Towell",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "25",
+      "name": "Joseph Cavolo",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "26",
+      "name": "Levi Perkins",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "27",
+      "name": "Conrad Hill",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "27",
+      "name": "Kenneth Arrunategui",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "28",
+      "name": "Kamden Swix",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "29",
+      "name": "Noah Brown",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "30",
+      "name": "Colin Murphy",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "31",
+      "name": "Jack Schaller",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "32",
+      "name": "Ryan Baiera",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "33",
+      "name": "Griffin Olson",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "34",
+      "name": "Harrison Dilts",
+      "level": "V",
+      "grade": "12"
+    },
+    {
+      "number": "35",
+      "name": "Fabian Quito",
+      "level": "V",
+      "grade": "11"
+    },
+    {
+      "number": "35",
+      "name": "Sam Harris",
+      "level": "V",
+      "position": "GK",
+      "grade": "12"
+    },
+    {
+      "number": "36",
+      "name": "John Christie",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "38",
+      "name": "Declan Leahy",
+      "level": "V",
+      "grade": "10"
+    },
+    {
+      "number": "41",
+      "name": "Connor Fahy",
+      "level": "V",
+      "grade": "12"
+    }
+  ]
+}
