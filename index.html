@@ -61,6 +61,11 @@
     .touch-target {
       min-height: 48px;
     }
+    /* iOS Safari double-tap-to-zoom hijacks rapid keypad taps; manipulation
+       disables double-tap zoom on these elements while keeping pinch-zoom. */
+    #jersey-keypad button { touch-action: manipulation; }
+    #clear-btn { touch-action: manipulation; }
+    a.button, #install-open, #install-gotit { touch-action: manipulation; }
     @media (max-width: 380px) {
       .jersey { font-size: 6.5rem; }
       .player-name { font-size: 2.5rem; }
